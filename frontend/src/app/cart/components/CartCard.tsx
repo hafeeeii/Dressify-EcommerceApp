@@ -2,7 +2,7 @@
 
 
 import { Product } from "@/lib/utils/types";
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { useAppDispatch } from "@/store/hooks";
 import { decrement, increment, removeFromCart } from "@/store/slices/cartSlice";
 import Image from "next/image";
 import Link from "next/link";

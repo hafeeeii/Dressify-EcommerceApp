@@ -1,5 +1,5 @@
 import React from "react";
-import { MdScale } from "react-icons/Md";
+import { MdScale } from "react-icons/md";
 import { colors } from "@/lib/data";
 import AddToCart from "./components/ProductActions/AddToCart";
 import BuyBtn from "./components/ProductActions/BuyBtn";
