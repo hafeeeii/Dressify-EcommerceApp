@@ -1,5 +1,5 @@
 import axios from "axios";
-const BASE_URL = 'http://127.0.0.1:1337/api'
+const BASE_URL = process.env.BASE_URL
 export async function useFetch(url:string) {
     try {
       const res = await axios.get( BASE_URL + url , {
