@@ -7,7 +7,7 @@ import { decrement, increment, removeFromCart } from "@/store/slices/cartSlice";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { BsTrash } from "react-icons/Bs";
+import { BsTrash } from "react-icons/bs";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 
 const CartCard = ({itemData}:{itemData:Product[]}) => {

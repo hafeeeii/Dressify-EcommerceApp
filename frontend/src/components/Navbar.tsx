@@ -3,7 +3,7 @@
 import { useAppSelector } from "@/store/hooks";
 import Link from "next/link";
 import React from "react";
-import { BsMenuButtonFill } from "react-icons/Bs";
+import { BsMenuButtonFill } from "react-icons/bs";
 import {
   AiOutlineHeart,
   AiOutlineShoppingCart,

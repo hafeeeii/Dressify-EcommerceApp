@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { AiOutlineHeart, AiOutlineShoppingCart } from "react-icons/ai";
-import { MdOutlineCompareArrows } from "react-icons/Md";
+import { MdOutlineCompareArrows } from "react-icons/md";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { addToCart, removeFromCart } from "@/store/slices/cartSlice";
 import {

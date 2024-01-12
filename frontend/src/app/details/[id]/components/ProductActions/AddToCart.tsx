@@ -12,7 +12,7 @@ import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
 import Link from "next/link";
 import React from "react";
 import toast from "react-hot-toast";
-import { MdOutlineCompareArrows } from "react-icons/Md";
+import { MdOutlineCompareArrows } from "react-icons/md";
 import { AiOutlineHeart, AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 
 

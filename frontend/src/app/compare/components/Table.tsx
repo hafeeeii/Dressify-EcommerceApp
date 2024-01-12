@@ -3,7 +3,7 @@
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { removeFromCompare } from "@/store/slices/compareSlice";
 import React from "react";
-import { MdClose } from "react-icons/Md";
+import { MdClose } from "react-icons/md";
 
 const Table = () => {
   const dispatch = useAppDispatch();
