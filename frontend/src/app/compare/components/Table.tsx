@@ -2,13 +2,13 @@
 
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { removeFromCompare } from "@/store/slices/compareSlice";
+import Image from "next/image";
 import React from "react";
 import { MdClose } from "react-icons/md";
 
 const Table = () => {
   const dispatch = useAppDispatch();
   const { itemData } = useAppSelector(({ compareSlice }) => compareSlice);
-  console.log(itemData);
 
   return (
     <div>
@@ -29,7 +29,7 @@ const Table = () => {
               <tr key={item.id} className="flex flex-col">
                 <td className="p-10 border min-h-[50vh]">
                   <div className=" relative w-[10rem]">
-                    <img src={item.img} alt="dd" fill />
+                    <Image src={item.img} alt="dd" fill />
 
                     <button
                       className="absolute top-2 right-2  p-4 bg-white shadow-md rounded-full hover:bg-black hover:text-white duration-500"

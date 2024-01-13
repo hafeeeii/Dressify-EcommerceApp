@@ -48,12 +48,12 @@ const Hero = ({ heroImg }: { heroImg: HeroImg[] }) => {
             className="absolute top-[30%]  left-[10%] text-center z-[9999] "
             key={heroImg[currentImage]?.id}
           >
-            <div className="sm:text-7xl text-5xl w-[35vw] ">
+            <div className="sm:text-7xl text-5xl w-[35vw] capitalize">
               <h2>{heroImg[currentImage]?.attributes?.title}</h2>
             </div>
 
             <div className="opacity-70 mt-2 sm:text-md text-sm">
-              <p> So soft, you don't want to take it of</p>
+              <p> So soft, you don&#39;t want to take it of</p>
             </div>
 
             <div className="btn btn-outline text-black btn-wide  hover:bg-black hover:text-white sm:mt-10 mt-8 ">
