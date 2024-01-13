@@ -3,7 +3,7 @@ import React from "react";
 
 import Table from "./components/Table";
 
-const page = () => {
+const Compare = () => {
   return (
     <div className="lg:px-16 p-1 min-h-screen flex flex-col items-center my-6">
       <h2 className="font-medium text-4xl ">Compare Products</h2>
@@ -21,4 +21,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Compare;

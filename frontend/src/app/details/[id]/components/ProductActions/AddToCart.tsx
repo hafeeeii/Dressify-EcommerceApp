@@ -19,14 +19,10 @@ import { AiOutlineHeart, AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 const AddToCart = ({ data }:{
   data:Product
 }) => {
-  if (!data) {
-    return <p>loading</p>;
-  }
   const dispatch = useAppDispatch();
   const { itemData } = useAppSelector(({ cartSlice }) => cartSlice);
   const currentData = itemData?.find((item) => item.id === data?.id);
   const { wishListData } = useAppSelector(({ wishListSlice }) => wishListSlice);
-
   const isExistInWishList = wishListData?.some((item) => item.id === data?.id);
   const { isAuthenticated } = useKindeBrowserClient();
   const addToWishlistBtn = () => {

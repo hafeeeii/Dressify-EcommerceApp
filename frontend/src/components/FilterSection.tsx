@@ -19,7 +19,7 @@ const FilterSection = () => {
       <div className="text-sm text-slate-600 flex flex-col gap-4">
         <h3>Dresses</h3>
         <h3>Sweaters</h3>
-        <h3>Women's Shirts</h3>
+        <h3>Women&#39;s Shirts</h3>
         <h3>Dresses</h3>
       </div>
       <h2 className="text-md font-medium my-5 ">Availability</h2>
@@ -55,9 +55,9 @@ const FilterSection = () => {
       <h2 className="text-md font-medium my-5">Brand</h2>
       <h2 className="text-md font-medium my-5">Colors</h2>
       <div className="flex flex-wrap">
-        {colors?.map((color) => (
+        {colors?.map((color,index) => (
     <button
-            key={color}
+            key={index}
             className=" btn-xs btn-circle mr-4 my-2 tooltip tooltip-top shadow-md hover:scale-110 duration-500 active:scale-100 "
             style={{
               backgroundColor: color,

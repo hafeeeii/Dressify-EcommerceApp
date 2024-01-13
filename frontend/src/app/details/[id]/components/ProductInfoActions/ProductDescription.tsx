@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const ProductDescription = () => {
@@ -11,7 +12,7 @@ const ProductDescription = () => {
           audits and continuous improvement plans. Made of super-soft cotton,
           the Organic Cotton Cutaway Tank features a high neck and back, and a
           slight curve at the shoulders, which makes it extra flattering. If
-          there’s one thing the ’90s got right, it’s the basics.
+          there&#39;s one thing the &#39;90s got right, it&#39;s the basics.
         </p>
         <div></div>
         <div>
@@ -19,7 +20,7 @@ const ProductDescription = () => {
           <p>
             The garments labelled as Committed are products that have been
             produced using sustainable fibres or processes, reducing their
-            environmental impact. Umino’s goal is to support the implementation
+            environmental impact. Umino&#39;s goal is to support the implementation
             of practices more committed to the environment.
           </p>
           <ul className="list-disc">
@@ -45,16 +46,18 @@ const ProductDescription = () => {
         <h4 className="font-bold mt-10 my-3 text-lg">Outstanding Features</h4>
         <p>
           Detailed with a collar and in need of no fussy details or prints to
-          catch the eye, it is made from cotton for breathable comfort that's
+          catch the eye, it is made from cotton for breathable comfort that&#39;s
           perfect for wrapping over everything, whether day or night and a safer
           working environment for cotton farmers, compared to conventional
           cotton production.
         </p>
         <div className="card  bg-base-100 shadow-xl">
           <figure>
-            <img
+            <Image
               src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
               alt="Shoes"
+              width={55}
+              height={55}
             />
           </figure>
           <div className="card-body bg-white">

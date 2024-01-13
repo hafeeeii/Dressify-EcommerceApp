@@ -10,7 +10,7 @@ import { useFetch } from "@/lib/hooks/useFetch";
 import { Product } from "@/lib/utils/types";
 import Image from "next/image";
 
-const page = async ({
+const Detail = async ({
   params,
 }: {
   params: {
@@ -62,9 +62,9 @@ const page = async ({
               <h6>13 people are viewing this right now</h6>
               <h5>color:Black</h5>
               <div>
-                {colors?.map((color) => (
+                {colors?.map((color,index) => (
                   <button
-                    key={color}
+                    key={index}
                     className=" btn-xs btn-circle mr-4 my-2 tooltip tooltip-top shadow-md hover:scale-110 duration-500 active:scale-100"
                     style={{
                       backgroundColor: color,
@@ -134,4 +134,4 @@ const page = async ({
   );
 };
 
-export default page;
+export default Detail;

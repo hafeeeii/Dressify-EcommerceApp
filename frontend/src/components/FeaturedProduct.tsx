@@ -3,8 +3,13 @@ import Card from "./Card";
 import { useFetch } from "@/lib/hooks/useFetch";
 import { Product } from "@/lib/utils/types";
 
-
-const FeaturedProduct = async ({ type ,title}: { type: string ,title:string}) => {
+const FeaturedProduct = async ({
+  type,
+  title,
+}: {
+  type: string;
+  title: string;
+}) => {
   const products = await useFetch(
     `/products?populate=*&[filters][type][$eq]=${type}`
   );
@@ -18,8 +23,10 @@ const FeaturedProduct = async ({ type ,title}: { type: string ,title:string}) =>
         </p>
       </div>
       <div className="flex justify-center items-center flex-wrap sm:gap-10">
-        {products?.data?.slice(0,4).map((product: Product) => (
-          <Card data={product} />
+        {products?.data?.slice(0, 4).map((product: Product) => (
+          <div key={product?.id}>
+            <Card data={product} />
+          </div>
         ))}
       </div>
     </div>
