@@ -5,7 +5,7 @@ import { Collection, Product } from "@/lib/utils/types";
 import React from "react";
 
 
-const page = async ({ params }: { params: { id: string } }) => {
+const CollectionDetail = async ({ params }: { params: { id: string } }) => {
   const newId: number = parseInt(params?.id);
   const collectionsData = await useFetch(
     `/sub-categories?populate=*&[filters][id][$eq]=${newId}`
@@ -26,4 +26,4 @@ const page = async ({ params }: { params: { id: string } }) => {
   );
 };
 
-export default page;
+export default CollectionDetail;
