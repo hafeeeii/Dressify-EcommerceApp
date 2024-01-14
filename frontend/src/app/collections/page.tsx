@@ -17,6 +17,7 @@ const Collections = async () => {
         </p>
       </div>
       <div className="flex flex-wrap gap-5 justify-center ">
+
         {collections?.data?.map((collection: Collection) => (
           <div
             key={collection.id}
@@ -24,7 +25,7 @@ const Collections = async () => {
           >
             <Link href={`/collections/${collection.id}`}>
                 <Image
-                  src={ collection?.attributes?.img?.data?.attributes?.url ?  collection?.attributes?.img?.data?.attributes?.url:''}
+                  src={collection?.attributes?.img?.data?.attributes?.formats?.small?.url}
                   alt="Products image"
                   fill
                   className="object-cover object-top  hover:scale-110 transition duration-500"

@@ -71,7 +71,7 @@ export type Collection = {
     updatedAt: string;
     publishedAt: string;
     products: {
-      data: [];
+      data: Product[];
     };
     categories: {
       data: [];

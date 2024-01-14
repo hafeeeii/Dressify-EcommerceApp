@@ -16,10 +16,8 @@ export type HeroImg = {
 };
 
 const Hero = ({ heroImg }: { heroImg: HeroImg[] }) => {
-  console.log(heroImg, "this is from hero");
-
-  const [currentImage, setCurrentImage] = useState(0);
-  const nextSlide = () => {
+ const [currentImage, setCurrentImage] = useState(0);
+ const nextSlide = () => {
     setCurrentImage((prevImage) => (prevImage + 1) % heroImg?.length);
   };
   const prevSlide = () => {
@@ -70,7 +68,7 @@ const Hero = ({ heroImg }: { heroImg: HeroImg[] }) => {
             >
               <div className="relative h-full">
                 <Image
-                  src={data?.attributes?.img?.data?.attributes?.url}
+                  src={data?.attributes?.img?.data?.attributes?.formats?.small?.url}
                   alt="banner img"
                   fill
                   className="object-[60%] object-cover"

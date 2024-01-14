@@ -4,14 +4,13 @@ import React from "react";
 import CardOptions from "./CardOptions";
 import { Product } from "@/lib/utils/types";
 
-
-
 const Card = ({ data }: { data: Product }) => {
-  const productImg = data?.attributes?.img?.data?.attributes?.url
-  const productImg2 = data?.attributes?.img2?.data?.attributes?.url
+  const productImg = data?.attributes?.img?.data?.attributes?.formats?.small?.url
+  const productImg2 = data?.attributes?.img2?.data?.attributes?.formats?.small?.url
+  console.log( productImg,'this is from card')
   return (
     <div>
-      {data && (
+      {data &&  (
         <div>
           <div className="relative group">
             <Link href={`/details/${data.id}`}>
@@ -22,8 +21,6 @@ const Card = ({ data }: { data: Product }) => {
               fill
               quality="99"
               className=" object-cover object-top group-hover:opacity-0  duration-500"
-              placeholder="blur"
-              blurDataURL={productImg2 && ( productImg)}
             />
             <Image
               alt="product image"
@@ -31,8 +28,6 @@ const Card = ({ data }: { data: Product }) => {
               fill
               quality="99"
               className=" object-cover object-top opacity-0 group-hover:opacity-100  duration-500 group-hover:scale-110 "
-              placeholder="blur"
-              blurDataURL={productImg2 && ( productImg2)}
             />
               </figure>
             </Link>
