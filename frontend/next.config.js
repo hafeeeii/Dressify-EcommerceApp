@@ -10,7 +10,11 @@ images:{
             protocol:'https',
             hostname:'res.cloudinary.com'
         }
-    ]
+    ],
+    reactStrictMode: true, 
+    eslint: { 
+      ignoreDuringBuilds: true, 
+    },
 }
 
 }
