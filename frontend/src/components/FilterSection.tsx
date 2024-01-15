@@ -8,9 +8,9 @@ import { colors, sizes } from "@/lib/data";
 const FilterSection = () => {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [availability, setAvailability] = useState("");
-  const [priceRange, setPriceRange] = useState<[number, number]>([0, 400]);
+  const [priceRange, setPriceRange] = useState<number | number[]>([0, 400]);
 
-  const handlePriceChange = (value: [number, number]) => {
+  const handlePriceChange = (value:  number | number[]) => {
     setPriceRange(value);
   };
   return (
