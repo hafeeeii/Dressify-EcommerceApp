@@ -2,12 +2,12 @@
 import { Product } from "@/lib/utils/types";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-type InitialType = {
+ export type CartInitialType = {
   itemData: Product[];
   quantity: number;
 };
 
-const initialState: InitialType = {
+const initialState: CartInitialType = {
   itemData: [],
   quantity: 0,
 };

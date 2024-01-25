@@ -1,10 +1,9 @@
-"use client";
-
 import { Product } from "@/lib/utils/types";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import { addToCart, decrement, increment } from "@/store/slices/cartSlice";
+import { CartInitialType, addToCart, decrement, increment } from "@/store/slices/cartSlice";
 import { addToCompare } from "@/store/slices/compareSlice";
 import {
+  WishListInitialType,
   addToWishList,
   removeFromWishList,
 } from "@/store/slices/wishListSlice";
@@ -15,15 +14,14 @@ import toast from "react-hot-toast";
 import { MdOutlineCompareArrows } from "react-icons/md";
 import { AiOutlineHeart, AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 
-
-const AddToCart = ({ data }:{
-  data:Product
-}) => {
+const AddToCart = ({ data }: { data: Product }) => {
   const dispatch = useAppDispatch();
-  const { itemData } = useAppSelector(({ cartSlice }) => cartSlice);
-  const currentData = itemData?.find((item) => item.id === data?.id);
-  const { wishListData } = useAppSelector(({ wishListSlice }) => wishListSlice);
-  const isExistInWishList = wishListData?.some((item) => item.id === data?.id);
+  const { itemData } = useAppSelector(({ cartSlice }:{cartSlice:CartInitialType}) => cartSlice);
+  const currentData = itemData?.find((item: Product) => item.id === data?.id);
+  const { wishListData } = useAppSelector(({ wishListSlice }:{wishListSlice:WishListInitialType}) => wishListSlice);
+  const isExistInWishList = wishListData?.some(
+    (item: Product) => item.id === data?.id
+  );
   const { isAuthenticated } = useKindeBrowserClient();
   const addToWishlistBtn = () => {
     if (isAuthenticated) {
@@ -38,7 +36,7 @@ const AddToCart = ({ data }:{
     }
   };
 
-  const doesExistInCart = itemData?.some((item) => item.id === data?.id);
+  const doesExistInCart = itemData?.some((item:Product) => item.id === data?.id);
 
   const compareBtn = () => {
     dispatch(addToCompare(data));
@@ -69,7 +67,9 @@ const AddToCart = ({ data }:{
           <AiOutlineMinus />
         </button>
         <p className="flex  p-4 font-medium w-7 justify-center">
-          {currentData?.attributes?.quantity ? currentData.attributes.quantity : "0"}
+          {currentData?.attributes?.quantity
+            ? currentData.attributes.quantity
+            : "0"}
         </p>
         <button onClick={handleIncrement} className="btn primary-btn">
           <AiOutlinePlus />

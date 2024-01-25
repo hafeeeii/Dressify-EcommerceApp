@@ -46,6 +46,7 @@
     "type": {
       "type": "enumeration",
       "enum": [
+        "normal",
         "trending",
         "featured",
         "popular"
@@ -65,6 +66,15 @@
       "relation": "manyToMany",
       "target": "api::sub-category.sub-category",
       "inversedBy": "products"
+    },
+    "availability": {
+      "type": "boolean"
+    },
+    "isNew": {
+      "type": "boolean"
+    },
+    "color": {
+      "type": "string"
     }
   }
 }

@@ -3,19 +3,10 @@ import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import { AiOutlineArrowRight, AiOutlineArrowLeft } from "react-icons/ai";
 import { motion } from "framer-motion";
-export type HeroImg = {
-  id: number;
-  attributes: {
-    title: string;
-    createdAt: string;
-    updatedAt: string;
-    publishedAt: string;
-    img: object;
-    img2: object;
-  };
-};
+import { Hero } from "@/lib/utils/types";
 
-const Hero = ({ heroImg }: { heroImg: HeroImg[] }) => {
+
+const Hero = ({ heroImg }: { heroImg: Hero[] }) => {
  const [currentImage, setCurrentImage] = useState(0);
  const nextSlide = () => {
     setCurrentImage((prevImage) => (prevImage + 1) % heroImg?.length);
@@ -59,7 +50,7 @@ const Hero = ({ heroImg }: { heroImg: HeroImg[] }) => {
             </div>
           </motion.div>
 
-          {heroImg?.map((data: HeroImg, index) => (
+          {heroImg?.map((data: Hero, index) => (
             <div
               key={index}
               className={` absolute w-full h-full opacity-0 transition-opacity duration-1000  ${

@@ -9,13 +9,20 @@ import {
   AiOutlineShoppingCart,
   AiOutlineSearch,
 } from "react-icons/ai";
+import { CartInitialType } from "@/store/slices/cartSlice";
+import { WishListInitialType } from "@/store/slices/wishListSlice";
 
 const Navbar = () => {
-  const { itemData } = useAppSelector(({ cartSlice }) => cartSlice);
-  const { wishListData } = useAppSelector(({ wishListSlice }) => wishListSlice);
+  const { itemData } = useAppSelector(
+    ({ cartSlice }: { cartSlice: CartInitialType }) => cartSlice
+  );
+
+  const { wishListData } = useAppSelector(
+    ({ wishListSlice }: { wishListSlice: WishListInitialType }) => wishListSlice
+  );
 
   return (
-    <nav className="navbar bg-primary-content fixed z-[9999] ">
+    <nav className="navbar bg-primary-content fixed z-[9999] bg-slate-500 ">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -32,7 +39,7 @@ const Navbar = () => {
               <Link href={"/"}>Shop</Link>
             </li>
             <li>
-              <Link href="/collections">Products</Link>
+              <Link href="/products">Products</Link>
             </li>
             <li>
               <Link href={"/"}>Blog</Link>
@@ -58,7 +65,7 @@ const Navbar = () => {
             <Link href={"/"}>Shop</Link>
           </li>
           <li className="hover:text-red-600 cursor-pointer">
-            <Link href="/collections">Products</Link>
+            <Link href="/products">Products</Link>
           </li>
           <li className="hover:text-red-600 cursor-pointer">
             <Link href={"/"}>Blog</Link>

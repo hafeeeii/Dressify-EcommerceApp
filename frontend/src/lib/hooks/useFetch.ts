@@ -8,7 +8,6 @@ export async function useFetch(url:string) {
         },
       });
       return res.data;
-      console.log(res.data)
     } catch (error) {
       console.log(error);
     }

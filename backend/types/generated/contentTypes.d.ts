@@ -845,7 +845,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
     img: Attribute.Media;
     img2: Attribute.Media;
     price: Attribute.Integer;
-    type: Attribute.Enumeration<['trending', 'featured', 'popular']>;
+    type: Attribute.Enumeration<['normal', 'trending', 'featured', 'popular']>;
     quantity: Attribute.Integer;
     categories: Attribute.Relation<
       'api::product.product',
@@ -857,6 +857,9 @@ export interface ApiProductProduct extends Schema.CollectionType {
       'manyToMany',
       'api::sub-category.sub-category'
     >;
+    availability: Attribute.Boolean;
+    isNew: Attribute.Boolean;
+    color: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

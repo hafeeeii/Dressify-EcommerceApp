@@ -56,14 +56,16 @@ export type Product = {
     publishedAt: string;
     type: string;
     categories: object;
-    sub_categories: object;
+    sub_categories: {
+      data:Sub_category[]
+    };
     quantity: number;
     img: Img;
     img2: Img;
   };
 };
 
-export type Collection = {
+export type categories = {
   id: number;
   attributes: {
     title: string;
@@ -76,6 +78,29 @@ export type Collection = {
     categories: {
       data: [];
     };
+    img: Img;
+  };
+};
+
+export type Sub_category = {
+  id: number;
+  attributes: {
+    title: string;
+    createdAt: string;
+    updatedAt: string;
+    img: Img;
+    products: {
+      data: Product[];
+    };
+  };
+};
+
+export type Hero = {
+  id: number;
+  attributes: {
+    title: string;
+    createdAt: string;
+    updatedAt: string;
     img: Img;
   };
 };

@@ -7,7 +7,6 @@ import { Product } from "@/lib/utils/types";
 const Card = ({ data }: { data: Product }) => {
   const productImg = data?.attributes?.img?.data?.attributes?.formats?.small?.url
   const productImg2 = data?.attributes?.img2?.data?.attributes?.formats?.small?.url
-  console.log( productImg,'this is from card')
   return (
     <div>
       {data &&  (

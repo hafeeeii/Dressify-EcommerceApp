@@ -3,20 +3,6 @@ import Link from "next/link";
 import React from "react";
 
 const Category = () => {
-  const data = [
-    {
-      img: "/banner1.jpeg",
-      title: "Stylish Top Trending",
-    },
-    {
-      img: "/banner2.jpeg",
-      title: "Hulton Perfect Simple",
-    },
-    {
-      img: "/banner3.jpeg",
-      title: "Online Limited Edition",
-    },
-  ];
 
   return (
     <div className="flex flex-col gap-1  w-full relative sm:flex-row sm:h-[60vh] ">

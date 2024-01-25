@@ -1,8 +1,9 @@
+import { Product } from "@/lib/utils/types";
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { SomeObjectType } from "./cartSlice";
+
 
 type IntialStateType = {
-  data: SomeObjectType[];
+  data: Product[];
   isClicked: boolean;
 };
 
@@ -15,7 +16,7 @@ const quickViewSlice = createSlice({
   name: "quickView",
   initialState,
   reducers: {
-    popOverData: (state, action: PayloadAction<SomeObjectType>) => {
+    popOverData: (state, action: PayloadAction<Product>) => {
       state.data.push(action.payload);
       state.isClicked = true;
     },

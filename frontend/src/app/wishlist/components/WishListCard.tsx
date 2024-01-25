@@ -15,30 +15,30 @@ const WishListCard = () => {
             <figure className="group relative  h-[28rem] w-[20rem]  overflow-hidden">
               <Image
                 alt="product image"
-                src={ data.attributes.img.data.attributes.url}
+                src={ data?.attributes?.img?.data?.attributes?.url}
                 fill
                 quality="99"
                 className=" object-cover object-top group-hover:opacity-0  duration-500"
               />
               <Image
                 alt="product image"
-                src={ data.attributes.img2.data.attributes.url}
+                src={ data?.attributes?.img2?.data?.attributes?.url}
                 fill
                 quality="99"
                 className=" object-cover object-top opacity-0 group-hover:opacity-100  duration-500 group-hover:scale-110"
               />
             </figure>
             <h2 className="text-md my-1 font-medium">
-              {data.attributes.title}
+              {data?.attributes?.title}
             </h2>
           </Link>
           <CardOptions data={data} />
 
           <div>
             <h4 className="text-md">
-              <span className="text-red-600 ">${data.attributes.price}.00</span>{" "}
+              <span className="text-red-600 ">${data?.attributes?.price}.00</span>{" "}
               <span className="line-through text-slate-500 font-extralight">
-                ${data.attributes.price + 20}.00
+                ${data?.attributes?.price + 20}.00
               </span>
             </h4>
           </div>

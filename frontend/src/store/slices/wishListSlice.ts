@@ -2,11 +2,11 @@
 import { Product } from "@/lib/utils/types";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-type InitialType = {
+export type WishListInitialType = {
   wishListData: Product[];
 };
 
-const initialState: InitialType = {
+const initialState: WishListInitialType = {
   wishListData: [],
 };
 

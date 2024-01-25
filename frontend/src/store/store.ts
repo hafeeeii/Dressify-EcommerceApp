@@ -6,6 +6,7 @@ import compareSlice from "./slices/compareSlice";
 import storage from "redux-persist/lib/storage";
 import { persistReducer } from "redux-persist";
 import thunk from "redux-thunk";
+import productSlice from "./slices/productSlice";
 
 const persistConfig = {
   key: "root",
@@ -17,6 +18,7 @@ const reducers = combineReducers({
   wishListSlice,
   quickViewSlice,
   compareSlice,
+  productSlice
 });
 
 const persistedReducer = persistReducer(persistConfig, reducers);

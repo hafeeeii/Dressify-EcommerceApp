@@ -1,11 +1,12 @@
+import { Product } from "@/lib/utils/types";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { SomeObjectType } from "./cartSlice";
 
-type InitialState = {
-  itemData: SomeObjectType[];
+
+export type CompareInitialState = {
+  itemData: Product[];
 };
 
-const initialState: InitialState = {
+const initialState: CompareInitialState= {
   itemData: [],
 };
 
@@ -13,7 +14,7 @@ export const compareSlice = createSlice({
   name: "compare",
   initialState,
   reducers: {
-    addToCompare: (state, action: PayloadAction<SomeObjectType>) => {
+    addToCompare: (state, action: PayloadAction<Product>) => {
       const { id } = action.payload;
 
       const doesItemExist = state.itemData?.find((item) => item.id === id);
@@ -21,7 +22,7 @@ export const compareSlice = createSlice({
         state.itemData = [...state.itemData, action.payload];
       }
     },
-    removeFromCompare: (state, action: PayloadAction<SomeObjectType>) => {
+    removeFromCompare: (state, action: PayloadAction<Product>) => {
       const { id } = action.payload;
 
       state.itemData = state.itemData?.filter((item) => item.id !== id);
