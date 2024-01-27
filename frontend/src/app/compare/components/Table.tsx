@@ -29,7 +29,11 @@ const Table = () => {
               <tr key={item.id} className="flex flex-col">
                 <td className="p-10 border min-h-[50vh]">
                   <div className=" relative w-[10rem]">
-                    <Image src={item.img} alt="dd" fill />
+                    <Image
+                      src={item?.attributes?.img?.data?.attributes?.url}
+                      alt="dd"
+                      fill
+                    />
 
                     <button
                       className="absolute top-2 right-2  p-4 bg-white shadow-md rounded-full hover:bg-black hover:text-white duration-500"
@@ -39,11 +43,9 @@ const Table = () => {
                     </button>
                   </div>
                 </td>
-                <td className=" p-10 border ">{item.title}</td>
-                <td className=" p-10 border ">{item.title}</td>
-                <td className=" p-10 border ">{item.title}</td>
-                <td className=" p-10 border ">{item.title}</td>
-                <td className=" p-10 border ">{item.title}</td>
+                <td className=" p-10 border ">{item?.attributes?.title}</td>
+                <td className=" p-10 border ">{item?.attributes?.price}</td>
+                <td className=" p-10 border ">{item?.attributes?.type}</td>
               </tr>
             ))}
           </tbody>

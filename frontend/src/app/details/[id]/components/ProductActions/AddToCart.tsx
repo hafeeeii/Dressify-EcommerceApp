@@ -1,3 +1,4 @@
+'use client'
 import { Product } from "@/lib/utils/types";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { CartInitialType, addToCart, decrement, increment } from "@/store/slices/cartSlice";

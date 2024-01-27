@@ -59,7 +59,7 @@ const Hero = ({ heroImg }: { heroImg: Hero[] }) => {
             >
               <div className="relative h-full">
                 <Image
-                  src={data?.attributes?.img?.data?.attributes?.formats?.small?.url}
+                  src={data?.attributes?.img?.data?.attributes?.url}
                   alt="banner img"
                   fill
                   className="object-[60%] object-cover"

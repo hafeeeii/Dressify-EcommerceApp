@@ -1,3 +1,4 @@
+
 import React from "react";
 import { MdScale } from "react-icons/md";
 import { colors } from "@/lib/data";
@@ -21,10 +22,8 @@ const Detail = async ({
   const data = await useFetch(`/products/${newId}?populate=*`);
   const detailData: Product = data?.data;
 
-  const productImg =
-    detailData?.attributes?.img?.data?.attributes?.url;
-  const productImg2 =
-    detailData?.attributes?.img2?.data?.attributes?.url;
+  const productImg = detailData?.attributes?.img?.data?.attributes?.url;
+  const productImg2 = detailData?.attributes?.img2?.data?.attributes?.url;
 
   return (
     <div className="min-h-screen  w-full p-2">
@@ -33,22 +32,12 @@ const Detail = async ({
           <div className="flex flex-col md:flex-row md:gap-20 md:justify-center">
             <div className="flex lg:flex-row flex-col gap-1">
               <div className="md:min-h-[70vh] min-h-[63vh] ">
-                <ImgMagnifier
-                  src={ productImg}
-                  width={400}
-                  height={400}
-                />
+                <ImgMagnifier src={productImg} width={400} height={400} />
               </div>
               <div className="mt-28 lg:mt-0">
-                <Image
-                  src={ productImg2}
-                  alt="img"
-                  width={100}
-                  height={100}
-                />
+                <Image src={productImg2} alt="img" width={100} height={100} />
               </div>
             </div>
-
             <div className="flex flex-col gap-2 ">
               <h2 className="text-2xl ">{detailData?.attributes?.title}</h2>
               <h3 className="text-xl font-bold">{`$${detailData?.attributes?.price}`}</h3>
@@ -62,7 +51,7 @@ const Detail = async ({
               <h6>13 people are viewing this right now</h6>
               <h5>color:Black</h5>
               <div>
-                {colors?.map((color,index) => (
+                {colors?.map((color, index) => (
                   <button
                     key={index}
                     className=" btn-xs btn-circle mr-4 my-2 tooltip tooltip-top shadow-md hover:scale-110 duration-500 active:scale-100"

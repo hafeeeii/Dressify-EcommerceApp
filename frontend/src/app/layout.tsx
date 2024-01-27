@@ -20,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-white text-black relative `}>
+      <body className={`${inter.className} bg-white text-black relative  `}>
         <StoreProvider>
           <Navbar />
           <div className="pt-16">{children}</div>

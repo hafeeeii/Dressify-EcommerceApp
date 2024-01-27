@@ -57,11 +57,13 @@ export type Product = {
     type: string;
     categories: object;
     sub_categories: {
-      data:Sub_category[]
+      data: Sub_category[];
     };
     quantity: number;
     img: Img;
     img2: Img;
+    availability: boolean;
+    color: string;
   };
 };
 

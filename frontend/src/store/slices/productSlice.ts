@@ -23,7 +23,7 @@ export const productSlice = createSlice({
       state.products = action?.payload;
       state.filteredProducts = state?.products;
     },
-    handleFilter: (state, action) => {
+    handleCategoryFilter: (state, action) => {
       state.filters = action?.payload;
       if (state?.filters === "all") {
         state.filteredProducts = state?.products;
@@ -36,10 +36,18 @@ export const productSlice = createSlice({
         });
       }
     },
-    handleSort: (state, action) => {},
+    handleAvailabilityFilter: (state, action) => {
+      const filterCondition = action?.payload;
+      state.filteredProducts = state?.products?.filter((product) => {
+        return product?.attributes?.availability === action?.payload;
+      });
+    },
   },
 });
 
-export const { handleFilter, handleSort, handleProducts } =
-  productSlice.actions;
+export const {
+  handleCategoryFilter,
+  handleAvailabilityFilter,
+  handleProducts,
+} = productSlice.actions;
 export default productSlice.reducer;

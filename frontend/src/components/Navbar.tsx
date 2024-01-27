@@ -22,7 +22,7 @@ const Navbar = () => {
   );
 
   return (
-    <nav className="navbar bg-primary-content fixed z-[9999] bg-slate-500 ">
+    <nav className="navbar bg-primary-content fixed z-[9999]">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -85,7 +85,7 @@ const Navbar = () => {
           <button className="btn btn-ghost btn-circle  hover:text-red-600 relative">
             {" "}
             <AiOutlineHeart size={20} />
-            <div className="badge absolute top-1 right-0 w-4">
+            <div className="badge absolute top-1 right-0 w-4  bg-red-600 border-none text-white">
               {wishListData?.length}
             </div>
           </button>
@@ -95,7 +95,7 @@ const Navbar = () => {
           <button className="btn btn-ghost btn-circle  hover:text-red-600 relative">
             {" "}
             <AiOutlineShoppingCart size={20} />
-            <div className="badge absolute top-1 right-0 w-5">
+            <div className="badge absolute top-1 right-0 w-5 bg-red-600 border-none text-white">
               {itemData?.length}
             </div>
           </button>

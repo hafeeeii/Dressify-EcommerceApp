@@ -1,12 +1,14 @@
 "use client";
 
 import React, { useMemo, useState } from "react";
-import Slider from "rc-slider";
-import "rc-slider/assets/index.css";
-import { collections, colors, sizes } from "@/lib/data";
+import { colors, sizes } from "@/lib/data";
 import { Product } from "@/lib/utils/types";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import { ProductInitialType, handleFilter } from "@/store/slices/productSlice";
+import {
+  ProductInitialType,
+  handleAvailabilityFilter,
+  handleCategoryFilter,
+} from "@/store/slices/productSlice";
 
 type CategoryList = {
   id: number;
@@ -19,8 +21,6 @@ type CategoryList = {
 
 const FilterSection = () => {
   const dispatch = useAppDispatch();
-  const [selectedCategory, setSelectedCategory] = useState("");
-  const [availability, setAvailability] = useState("");
   const [priceRange, setPriceRange] = useState<number | number[]>([0, 400]);
 
   const { filteredProducts, products } = useAppSelector(
@@ -41,19 +41,21 @@ const FilterSection = () => {
   }, [filteredProducts]);
   const uniqueCategory = ["all", ...new Set<string>(getSubcategoryData)];
 
-  const handlePriceChange = (value: number | number[]) => {
-    setPriceRange(value);
-  };
+  const MIN = 10;
+  const MAX = 1000;
 
-  const { filters } = useAppSelector(({ productSlice }) => productSlice);
+  const [values, setValues] = useState([MIN, MAX]);
+
   return (
-    <div className="flex  flex-col w-[30%]  mx-6">
+    <div className="flex  flex-col">
       <h2 className="text-md font-medium mb-5">Category</h2>
       <div className="text-sm text-slate-600 flex flex-col gap-6 ">
         {uniqueCategory?.map((category, index) => (
           <button
             key={index}
-            onClick={(e) => dispatch(handleFilter(e.currentTarget.textContent))}
+            onClick={(e) =>
+              dispatch(handleCategoryFilter(e.currentTarget.textContent))
+            }
             className="capitalize hover:translate-x-3 duration-500 cursor-pointer hover:scale-105 hover:text-black text-start"
           >
             {category}
@@ -62,16 +64,22 @@ const FilterSection = () => {
       </div>
       <h2 className="text-md font-medium my-5 ">Availability</h2>
       <div className="flex flex-col mb-4  ">
-        <label className="flex  items-center gap-3 cursor-pointer">
-          <input type="checkbox" name="checkbox-10" className="h-4 w-4  " />
+        <label
+          className="flex  items-center gap-3 cursor-pointer"
+          onClick={() => dispatch(handleAvailabilityFilter(true))}
+        >
+          <input type="radio" name="radio" className="h-4 w-4  " />
           <span className="text-sm text-slate-600">In stock</span>
         </label>
       </div>
       <div className="flex flex-col gap-4 ">
-        <label className="flex  items-center gap-3 cursor-pointer">
+        <label
+          className="flex  items-center gap-3 cursor-pointer"
+          onClick={() => dispatch(handleAvailabilityFilter(false))}
+        >
           <input
-            type="checkbox"
-            name="checkbox-10"
+            type="radio"
+            name="radio"
             className="h-4 w-4  
         "
           />
@@ -79,17 +87,7 @@ const FilterSection = () => {
         </label>
       </div>
 
-      <h2 className="text-md font-medium my-5">Price</h2>
-      <div className="w-[85%] my-6 ">
-        <Slider
-          range
-          min={0}
-          max={400}
-          value={priceRange}
-          marks={{ 0: 0, 100: 100, 200: 200, 300: 300, 400: 400 }}
-          onChange={handlePriceChange}
-        />
-      </div>
+      <div className="w-[85%] my-6 "></div>
       <h2 className="text-md font-medium my-5">Brand</h2>
       <h2 className="text-md font-medium my-5">Colors</h2>
       <div className="flex flex-wrap">
