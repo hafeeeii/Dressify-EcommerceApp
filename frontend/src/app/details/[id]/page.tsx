@@ -10,6 +10,7 @@ import ImgMagnifier from "./components/ProductInfoActions/ImgMagnifier";
 import { useFetch } from "@/lib/hooks/useFetch";
 import { Product } from "@/lib/utils/types";
 import Image from "next/image";
+import SubHeading from "@/components/SubHeading";
 
 const Detail = async ({
   params,

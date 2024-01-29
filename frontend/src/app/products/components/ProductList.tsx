@@ -18,7 +18,7 @@ const ProductList = ({ data }: { data: Product[] }) => {
 
   const  {filteredProducts}= useAppSelector(({productSlice})=>productSlice)
   return (
-    <div className="flex flex-wrap gap-3  ">
+    <div className="flex flex-wrap gap-3 justify-center ">
       {filteredProducts?.map((product: Product) => (
         <div key={product.id}>
           <Card data={product} />

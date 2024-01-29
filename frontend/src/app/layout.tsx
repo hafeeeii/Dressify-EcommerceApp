@@ -20,13 +20,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-white text-black relative  `}>
+      <body className={`${inter.className} bg-white text-black relative`}>
         <StoreProvider>
           <Navbar />
           <div className="pt-16">{children}</div>
           <Toaster />
           <Footer />
-          <div className=" top-[70%] right-0 fixed z-50">
+          <div className=" top-[70%] right-0 fixed z-10">
             <SideMenu />
           </div>
         </StoreProvider>

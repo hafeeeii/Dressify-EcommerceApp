@@ -22,10 +22,10 @@ const Navbar = () => {
   );
 
   return (
-    <nav className="navbar bg-primary-content fixed z-[9999]">
+    <nav className="navbar  fixed z-[99]  bg-white">
       <div className="navbar-start">
         <div className="dropdown">
-          <label tabIndex={0} className="btn btn-ghost lg:hidden">
+          <label tabIndex={0} className="btn btn-ghost lg:hidden ">
             <BsMenuButtonFill />
           </label>
           <ul
@@ -56,7 +56,7 @@ const Navbar = () => {
           Dressify
         </Link>
       </div>
-      <div className="navbar-center hidden lg:flex">
+      <div className="navbar-center hidden lg:flex ">
         <ul className="flex gap-10 text-sm font-medium">
           <li className="hover:text-red-600 cursor-pointer">
             <Link href="/">Home</Link>

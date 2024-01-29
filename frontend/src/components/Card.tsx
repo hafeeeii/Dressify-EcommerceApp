@@ -13,12 +13,12 @@ const Card = ({ data }: { data: Product }) => {
   const availability = data?.attributes?.availability;
   console.log(availability, "is this availavle");
   return (
-    <div>
+    <div className="flex  ">
       {data && (
-        <div>
-          <div className="relative group ">
+        <div className="sm:w-[20rem] min-h-[25rem]  sm:min-h-[40rem] w-[10rem] ">
+          <div className="relative group  ">
             <Link href={`/details/${data.id}`}>
-              <figure className="group relative  min-h-[28rem] w-[20rem]  overflow-hidden">
+              <figure className="group relative sm:min-h-[28rem] sm:w-[20rem] min-h-[18rem] w-[10rem] overflow-hidden">
                 <Image
                   alt="product image"
                   src={productImg && productImg}
@@ -35,10 +35,10 @@ const Card = ({ data }: { data: Product }) => {
                 />
               </figure>
             </Link>
-            <div className="opacity-0 group-hover:opacity-100 duration-500">
+            <div className="sm:opacity-0 group-hover:opacity-100 duration-500">
               <CardOptions data={data} />
             </div>
-            <button className="absolute bottom-3 left-1/2 transform -translate-x-1/2  p-4 px-10 bg-white shadow-md rounded-full hover:bg-black hover:text-white duration-500 opacity-0 group-hover:opacity-100">
+            <button className="absolute bottom-3 left-1/2 transform -translate-x-1/2  sm:p-4 sm:px-10 sm:bg-white shadow-md rounded-full text-xs sm:hover:bg-black sm:hover:text-white duration-500 sm:opacity-0 group-hover:opacity-100 bg-white btn-sm sm:btn-md">
               Buy Now
             </button>
 
@@ -54,7 +54,7 @@ const Card = ({ data }: { data: Product }) => {
               </button>
             )}
           </div>
-          <div className="w-[20rem]">
+          <div className="sm:w-[20rem] w-[10rem]">
             <h2 className="text-md my-1 font-medium">
               {data?.attributes?.title}
             </h2>

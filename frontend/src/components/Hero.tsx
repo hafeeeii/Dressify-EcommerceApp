@@ -5,10 +5,9 @@ import { AiOutlineArrowRight, AiOutlineArrowLeft } from "react-icons/ai";
 import { motion } from "framer-motion";
 import { Hero } from "@/lib/utils/types";
 
-
 const Hero = ({ heroImg }: { heroImg: Hero[] }) => {
- const [currentImage, setCurrentImage] = useState(0);
- const nextSlide = () => {
+  const [currentImage, setCurrentImage] = useState(0);
+  const nextSlide = () => {
     setCurrentImage((prevImage) => (prevImage + 1) % heroImg?.length);
   };
   const prevSlide = () => {
@@ -24,7 +23,7 @@ const Hero = ({ heroImg }: { heroImg: Hero[] }) => {
   }, []);
 
   return (
-    <div className="relative sm:min-h-[100vh] h-[65vh]  w-[100%]  ">
+    <div className="relative sm:min-h-[100vh] h-[35vh]  w-[100%]  ">
       {heroImg && (
         <>
           <motion.div
@@ -34,18 +33,18 @@ const Hero = ({ heroImg }: { heroImg: Hero[] }) => {
             }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1.4 }}
-            className="absolute top-[30%]  left-[10%] text-center z-[9999] "
+            className="absolute  sm:top-[30%]  sm:left-[10%] top-[20%] left-[6%]  sm:w-[100vw] w-[45vw] z-50 flex flex-col "
             key={heroImg[currentImage]?.id}
           >
-            <div className="sm:text-7xl text-5xl w-[35vw] capitalize">
+            <div className="sm:text-7xl text-2xl w-[35vw] capitalize ">
               <h2>{heroImg[currentImage]?.attributes?.title}</h2>
             </div>
 
-            <div className="opacity-70 mt-2 sm:text-md text-sm">
+            <div className="opacity-70 mt-2 sm:text-md text-xs sm:text-md">
               <p> So soft, you don&#39;t want to take it of</p>
             </div>
 
-            <div className="btn btn-outline text-black btn-wide  hover:bg-black hover:text-white sm:mt-10 mt-8 ">
+            <div className="btn btn-outline text-black sm:btn-wide btn-sm sm:btn-lg rounded-full hover:bg-black hover:text-white sm:mt-10 mt-4  ">
               <button>Shop Now</button>
             </div>
           </motion.div>

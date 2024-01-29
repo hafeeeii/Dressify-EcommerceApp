@@ -4,46 +4,59 @@ import React from "react";
 import { add } from "date-fns";
 import useCountdown from "@/lib/hooks/useCountdown";
 const futureDate = add(new Date(), {
-  days: 30,
+  days: 20,
   hours: 22,
   minutes: 40,
 });
 
 const Countdown = () => {
-  const { days, hours, minutes, seconds} = useCountdown(futureDate);
+  const countDownData = useCountdown(futureDate);
+  const modifiedCountDown = [
+    {
+      time: countDownData?.days,
+      label: "days",
+    },
+    {
+      time: countDownData?.hours,
+      label: "hours",
+    },
+    {
+      time: countDownData?.minutes,
+      label: "min",
+    },
+    {
+      time: countDownData?.seconds,
+      label: "seconds",
+    },
+  ];
+
   return (
-    <div className="relative h-[100vh] w-[100vw]">
+    <div className="relative sm:h-[100vh] w-[100vw] h-[27vh]">
       <Image src="/fashion2-countdown_1.jpg" alt="img" fill objectFit="cover" />
-      <div className=" absolute top-[25%] left-[12%] flex flex-col gap-8  ">
-        <p className="uppercase text-xs text-gray-600 flex flex-wrap">Deal of the week</p>
-        <h2 className="text-6xl font-medium tracking-tighter">Made for your</h2>
-        <p className="text-sm text-gray-600 tracking-normal font-medium flex flex-wrap">
+      <div className=" absolute sm:top-[25%] top-[10%] sm:left-[12%] left-[4%] flex flex-col sm:gap-8 gap-2 sm:w-full w-[60vw] ">
+        <p className="uppercase text-xs text-gray-600 flex flex-wrap">
+          Deal of the week
+        </p>
+        <h2 className="sm:text-6xl text-2xl font-medium tracking-tighter">
+          Made for your
+        </h2>
+        <p className="sm:text-sm text-xs text-gray-600 tracking-normal font-medium  flex-wrap sm:flex hidden">
           Explore our latest considered collection for the new season.
         </p>
-        <ul className="flex gap-7 flex-wrap">
-          <li>
-            <span>
-              <span className="text-5xl mr-1">{days}</span>days 
-            </span>
-          </li>
-          <li>
-            <span>
-              <span className="text-5xl mr-1">{hours}</span>hour 
-            </span>
-          </li>
-          <li>
-            <span>
-              <span className="text-5xl mr-1">{minutes}</span>mins 
-            </span>
-          </li>
-          <li>
-            <span>
-              <span className="text-5xl mr-1">{seconds}</span>secs
-            </span>
-          </li>
-        </ul>
 
-        <button className="btn btn-circle btn-wide primary-btn mt-10">get at only $256</button>
+        <ul className="flex sm:gap-7 flex-wrap text-xs w-[50vw] sm:w-full ">
+          {modifiedCountDown?.map((data, index) => (
+            <li key={index}>
+              <span>
+                <span className="sm:text-5xl text-lg mr-1">{data.time}</span>
+                {data.label}
+              </span>
+            </li>
+          ))}
+        </ul>
+        <button className="w-[10rem] sm:w-[20rem] btn sm:btn-circle btn-sm  primary-btn sm:mt-10 px-0">
+          get at only $256
+        </button>
       </div>
     </div>
   );

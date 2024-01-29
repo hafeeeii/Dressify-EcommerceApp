@@ -51,6 +51,7 @@ const CardOptions = ({ data }:{data: Product}) => {
   const compareBtn = () => {
     dispatch(addToCompare(data));
   };
+  const size = window.innerWidth < 600 ? 30 : 50
   return (
     <div className="absolute right-2 top-6  flex flex-col gap-3 ">
       <button
@@ -59,8 +60,9 @@ const CardOptions = ({ data }:{data: Product}) => {
         data-tip="Add to wishlist"
       >
         <AiOutlineHeart
-          size={50}
-          className={`p-4  shadow-md rounded-full  duration-500 ${
+          size={size}
+
+          className={`p-2 sm:p-4  shadow-md rounded-full  duration-500 ${
             isExistInWishList
               ? "bg-black text-white"
               : "bg-white text-black hover:bg-black hover:text-white"
@@ -73,9 +75,11 @@ const CardOptions = ({ data }:{data: Product}) => {
           className="tooltip tooltip-left"
           data-tip="Compare"
         >
+
           <MdOutlineCompareArrows
-            size={50}
-            className="p-4 bg-white shadow-md rounded-full hover:bg-black hover:text-white duration-500"
+            size={size}
+
+            className="p-2 sm:p-4 bg-white shadow-md rounded-full hover:bg-black hover:text-white duration-500"
           />
         </button>
       </Link>
@@ -86,8 +90,9 @@ const CardOptions = ({ data }:{data: Product}) => {
         data-tip="Add to cart"
       >
         <AiOutlineShoppingCart
-          size={50}
-          className={`p-4  shadow-md rounded-full  duration-500 ${
+          size={size}
+
+          className={`p-2 sm:p-4  shadow-md rounded-full  duration-500 ${
             isExistInCart
               ? "bg-black text-white"
               : "bg-white text-black hover:bg-black hover:text-white"
