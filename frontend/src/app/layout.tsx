@@ -22,8 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} bg-white text-black relative`}>
         <StoreProvider>
-          <Navbar />
-          <div className="pt-16">{children}</div>
+          <div className="max-w-[100vw] overflow-hidden">{children}</div>
           <Toaster />
           <Footer />
           <div className=" top-[70%] right-0 fixed z-10">

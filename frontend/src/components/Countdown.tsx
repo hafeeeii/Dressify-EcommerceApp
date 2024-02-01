@@ -1,13 +1,9 @@
 "use client";
 import Image from "next/image";
 import React from "react";
-import { add } from "date-fns";
 import useCountdown from "@/lib/hooks/useCountdown";
-const futureDate = add(new Date(), {
-  days: 20,
-  hours: 22,
-  minutes: 40,
-});
+import { futureDate } from "@/lib/data";
+
 
 const Countdown = () => {
   const countDownData = useCountdown(futureDate);

@@ -8,11 +8,11 @@ const WishListCard = () => {
   const { wishListData } = useAppSelector(({ wishListSlice }) => wishListSlice);
 
   return (
-    <div className="flex flex-wrap">
+    <div className="flex flex-wrap justify-center">
       {wishListData?.map((data) => (
-        <div key={data.id} className="relative">
+        <div key={data.id} className="sm:w-[20rem] min-h-[25rem]  sm:min-h-[40rem] w-[10rem] ">
           <Link href={`/details/${data.id}`}>
-            <figure className="group relative  h-[28rem] w-[20rem]  overflow-hidden">
+            <figure className="group relative sm:min-h-[28rem] sm:w-[20rem] min-h-[18rem] w-[10rem] overflow-hidden">
               <Image
                 alt="product image"
                 src={ data?.attributes?.img?.data?.attributes?.url}

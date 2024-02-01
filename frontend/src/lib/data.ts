@@ -1,3 +1,5 @@
+import { add } from "date-fns";
+
 export const brandsName = {
   cloths: [
     "Urban Threads",
@@ -40,3 +42,11 @@ export const collections = [
 
 export const colors = ["red", "blue", "green", "yellow", "purple", "orange"];
 export const sizes = ["S", "M", "L", "XL", "XXL"];
+
+export const futureDate = add(new Date(), {
+  days: 20,
+  hours: 22,
+  minutes: 40,
+});
+
+export const sortOptions = [{label:'Price (lowest)',value:'price-asc'},{label:'Price (highest)',value:'price-desc'},{label:'A-Z',value:'name-asc'},{label:'Z-A ',value:'name-desc'},]

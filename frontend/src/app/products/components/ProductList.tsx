@@ -6,6 +6,7 @@ import { useAppDispatch, useAppSelector} from "@/store/hooks";
 import {
   handleProducts,
 } from "@/store/slices/productSlice";
+import {motion} from 'framer-motion'
 
 
 const ProductList = ({ data }: { data: Product[] }) => {
@@ -20,9 +21,13 @@ const ProductList = ({ data }: { data: Product[] }) => {
   return (
     <div className="flex flex-wrap gap-3 justify-center ">
       {filteredProducts?.map((product: Product) => (
-        <div key={product.id}>
+        <motion.div  
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -20 }}
+        transition={{ duration: 0.8 }} key={product.id}>
           <Card data={product} />
-        </div>
+        </motion.div>
       ))}
     </div>
   );

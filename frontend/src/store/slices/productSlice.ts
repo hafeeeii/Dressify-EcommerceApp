@@ -1,6 +1,5 @@
-import Category from "@/components/Category";
 import { Product } from "@/lib/utils/types";
-import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 export type ProductInitialType = {
   products: Product[];
@@ -14,7 +13,6 @@ const initialState: ProductInitialType = {
   filters: "",
   sort: "",
 };
-
 export const productSlice = createSlice({
   name: "products",
   initialState,
@@ -28,7 +26,7 @@ export const productSlice = createSlice({
       if (state?.filters === "all") {
         state.filteredProducts = state?.products;
       } else {
-        state.filteredProducts = state?.products?.filter((product) => {
+        state.filteredProducts = [...state?.products]?.filter((product) => {
           const subCategory = product?.attributes?.sub_categories?.data;
           return subCategory?.some(
             (category) => category?.attributes?.title === state?.filters
@@ -37,17 +35,38 @@ export const productSlice = createSlice({
       }
     },
     handleAvailabilityFilter: (state, action) => {
-      const filterCondition = action?.payload;
-      state.filteredProducts = state?.products?.filter((product) => {
+      state.filteredProducts = [...state?.products]?.filter((product) => {
         return product?.attributes?.availability === action?.payload;
       });
     },
+
+    handleSort: (state, action) => {
+      const sort = action?.payload;
+
+      if (sort) {
+        const sorted = [...state.filteredProducts]?.sort((a, b) => {
+          if (sort === "price-asc") {
+            return a?.attributes?.price - b?.attributes?.price || 0;
+          } else if (sort === "price-desc") {
+            return b?.attributes?.price - a?.attributes?.price || 0;
+          } else if (sort === "name-asc") {
+            return a?.attributes?.title?.localeCompare(b?.attributes?.title);
+          } else {
+            return b?.attributes?.title?.localeCompare(a?.attributes?.title);
+          }
+
+          return 0;
+        });
+
+        state.filteredProducts = sorted || [];
+      }
+    },
   },
 });
-
 export const {
   handleCategoryFilter,
   handleAvailabilityFilter,
   handleProducts,
+  handleSort,
 } = productSlice.actions;
 export default productSlice.reducer;
