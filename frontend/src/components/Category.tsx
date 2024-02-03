@@ -3,15 +3,13 @@ import Link from "next/link";
 import React from "react";
 
 const Category = () => {
-
   return (
     <div className="flex flex-col gap-1  w-full relative sm:flex-row sm:h-[60vh] ">
-      <div className="relative w-full sm:w-[30%] h-[40vh] sm:h-full overflow-hidden ">
+      <div className="relative w-[50%] sm:w-[30%] h-[40vh] sm:h-full overflow-hidden ">
         <Link href="/collections/dress">
           <Image
             src="/women-banner.webp"
             fill
-           
             alt="category"
             className="h-full w-full object-cover hover:scale-110 transition duration-500"
           />
@@ -26,7 +24,6 @@ const Category = () => {
             <Image
               src="/cls2_f1.webp"
               fill
-        
               alt="category"
               className="h-full w-full object-cover hover:scale-110 transition duration-500"
             />
@@ -41,7 +38,6 @@ const Category = () => {
               <Image
                 src="/accesserious.jpeg"
                 fill
-              
                 alt="category"
                 className="h-full w-full object-cover hover:scale-110 transition duration-500"
               />
@@ -56,7 +52,6 @@ const Category = () => {
               <Image
                 src="/bag.jpeg"
                 fill
-            
                 alt="category"
                 className="h-full w-full object-cover hover:scale-110 transition duration-500 "
               />
@@ -72,7 +67,6 @@ const Category = () => {
           <Image
             src="/cls5_f1.webp"
             fill
-           
             alt="category"
             className="h-full w-full object-cover hover:scale-110 transition duration-500 "
           />

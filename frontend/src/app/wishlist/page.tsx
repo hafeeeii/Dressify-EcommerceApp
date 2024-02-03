@@ -17,7 +17,7 @@ const page = async () => {
           </li>
         </ul>
       </div>
-      <div>
+      <div className="flex justify-center gap-3 flex-wrap">
         <WishListCard />
       </div>
     </div>

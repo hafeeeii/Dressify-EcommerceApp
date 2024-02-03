@@ -9,9 +9,9 @@ import React from 'react'
 const Sort = () => {
 const dispatch = useAppDispatch()
   return (
-    <div className="dropdown">
-    <div tabIndex={0} role="button" className="btn  m-1">Click</div>
-    <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow text-white bg-black rounded-box w-52" >
+    <div className="dropdown dropdown-bottom">
+    <div tabIndex={0} role="button" className="btn  m-1 bg-black text-white">Sort</div>
+    <ul tabIndex={0} className="dropdown-content  menu p-2 shadow text-white bg-black rounded-box w-52" >
 {sortOptions?.map((option,index)=>(
   <li key={index} className='cursor-pointer' onClick={()=>dispatch(handleSort(option.value))} >
     {option.label}

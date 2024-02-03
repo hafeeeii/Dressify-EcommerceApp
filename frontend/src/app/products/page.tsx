@@ -16,17 +16,15 @@ const Products = async () => {
   return (
     <div className="min-h-screen">
       <div className="h-[20vh] w-full bg-purple-300 relative mb-6"></div>
-      <div className="flex flex-col sm:flex-row ">
-        <div className=" w-[30%]  mx-6 z-30">
+      <div className="flex flex-row items-center justify-start px-10">
+        <div className=" w-[30%]  mx-6 z-50">
           <Drawer />
         </div>
-        <div className="flex flex-col items-end gap-4 ">
-          <div className="mr-2420">
-            <Sort />
-          </div>
 
-          <ProductList data={products} />
-        </div>
+        <Sort />
+      </div>
+      <div className="flex flex-col items-end gap-4 ">
+        <ProductList data={products} />
       </div>
     </div>
   );

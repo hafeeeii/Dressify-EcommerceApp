@@ -33,12 +33,13 @@ const Card = ({ data }: { data: Product }) => {
                   quality="99"
                   className=" object-cover object-top opacity-0 group-hover:opacity-100  duration-500 group-hover:scale-110 "
                 />
+                <div className="lg:opacity-0 group-hover:opacity-100 duration-500">
+                  <CardOptions data={data} />
+                </div>
               </figure>
             </Link>
-            <div className="sm:opacity-0 group-hover:opacity-100 duration-500">
-              <CardOptions data={data} />
-            </div>
-            <button className="absolute bottom-3 left-1/2 transform -translate-x-1/2  sm:p-4 sm:px-10 sm:bg-white shadow-md rounded-full text-xs sm:hover:bg-black sm:hover:text-white duration-500 sm:opacity-0 group-hover:opacity-100 bg-white btn-sm sm:btn-md">
+
+            <button className="absolute bottom-3 left-1/2 transform -translate-x-1/2  sm:p-4 sm:px-10 sm:bg-white shadow-md rounded-full text-xs lg:hover:bg-black lg:hover:text-white duration-500 lg:opacity-0 group-hover:opacity-100 bg-white btn-sm sm:btn-md">
               Buy Now
             </button>
 
@@ -55,7 +56,7 @@ const Card = ({ data }: { data: Product }) => {
             )}
           </div>
           <div className="sm:w-[20rem] w-[10rem]">
-            <h2 className="text-md my-1 font-medium">
+            <h2 className="sm:text-md text-sm my-1 sm:font-medium capitalize">
               {data?.attributes?.title}
             </h2>
             <h4 className="text-md">

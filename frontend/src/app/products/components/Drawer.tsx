@@ -3,20 +3,20 @@ import FilterSection from "./FilterSection";
 const Drawer = () => {
   return (
     <div className="drawer  ">
-      <input id="my-drawer" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content hidden sm:block">
+      <input id="filter" type="checkbox" className="drawer-toggle" />
+      <div className="drawer-content hidden lg:block">
         <FilterSection />
       </div>
       <label
-        htmlFor="my-drawer"
-        className="btn btn-primary drawer-button sm:hidden flex my-3 cursor-pointer"
+        htmlFor="filter"
+        className="btn bg-black text-white drawer-button lg:hidden flex my-3 cursor-pointer"
       >
         Filter
       </label>
 
-      <div className="drawer-side sm:hidden">
+      <div className="drawer-side lg:hidden">
         <label
-          htmlFor="my-drawer"
+          htmlFor="filter"
           aria-label="close sidebar"
           className="drawer-overlay"
         ></label>

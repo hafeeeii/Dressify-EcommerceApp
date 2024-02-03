@@ -33,8 +33,8 @@ const Alert = () => {
       <span className="flex flex-row">
         Black Friday 50% Off! Limited time only:
         <span className="flex tracking-widest gap-2">
-          {modifiedCountDown?.map((date) => (
-            <div className=" w-[3.5rem] ml-2">
+          {modifiedCountDown?.map((date,index) => (
+            <div key={index} className=" w-[3.5rem] ml-2">
               {date.time}:{date.label}
             </div>
           ))}

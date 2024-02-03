@@ -11,9 +11,23 @@ export default async function Home() {
     <main className=" min-h-screen max-w-[100vw]">
       <Hero heroImg={heroImg?.data} />
       <Category />
-      <FeaturedProduct type="featured" title="Featured Products" />
+
       <Countdown />
-      <FeaturedProduct type="trending" title="Trending Products" />
+      <div></div>
+      <div>
+        <SubHeading
+          title="Trending"
+          paragraph="Here’s some of our most popular products people are in love with."
+        />
+        <FeaturedProduct type="trending" />
+      </div>
+      <div>
+        <SubHeading
+          title="Popular"
+          paragraph="Find the top most popular items in Dressify best sellers."
+        />
+        <FeaturedProduct type="popular" />
+      </div>
     </main>
   );
 }

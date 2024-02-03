@@ -14,9 +14,7 @@ import { addToCompare } from "@/store/slices/compareSlice";
 import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
 import { Product } from "@/lib/utils/types";
 
-const CardOptions = ({ data }:{data: Product}) => {
-
-
+const CardOptions = ({ data }: { data: Product }) => {
   const dispatch = useAppDispatch();
   const { itemData } = useAppSelector(({ cartSlice }) => cartSlice);
   const isExistInCart = itemData?.some((item) => item.id === data?.id);
@@ -51,7 +49,7 @@ const CardOptions = ({ data }:{data: Product}) => {
   const compareBtn = () => {
     dispatch(addToCompare(data));
   };
-  const size = window.innerWidth < 600 ? 30 : 50
+  const size = window.innerWidth < 768 ? 30 : 50;
   return (
     <div className="absolute right-2 top-6  flex flex-col gap-3 ">
       <button
@@ -61,7 +59,6 @@ const CardOptions = ({ data }:{data: Product}) => {
       >
         <AiOutlineHeart
           size={size}
-
           className={`p-2 sm:p-4  shadow-md rounded-full  duration-500 ${
             isExistInWishList
               ? "bg-black text-white"
@@ -75,10 +72,8 @@ const CardOptions = ({ data }:{data: Product}) => {
           className="tooltip tooltip-left"
           data-tip="Compare"
         >
-
           <MdOutlineCompareArrows
             size={size}
-
             className="p-2 sm:p-4 bg-white shadow-md rounded-full hover:bg-black hover:text-white duration-500"
           />
         </button>
@@ -91,7 +86,6 @@ const CardOptions = ({ data }:{data: Product}) => {
       >
         <AiOutlineShoppingCart
           size={size}
-
           className={`p-2 sm:p-4  shadow-md rounded-full  duration-500 ${
             isExistInCart
               ? "bg-black text-white"
