@@ -63,7 +63,7 @@ const Navbar = () => {
       </div>
 
       <div
-        className={`z-10 ease-out duration-700  w-[100vw]  bg-white shadow-lg p-3  ${
+        className={`z-50 ease-out duration-700  w-[100vw]  bg-white shadow-lg p-3  ${
           isScrolled && scrollDirecton === "down" ? "fixed top-0 left-0" : ""
         }`}
       >
@@ -100,7 +100,7 @@ const Navbar = () => {
                 </li>
               </ul>
 
-              <ul className="flex font-medium pr-8">
+              <ul className="flex font-medium pr-3">
                 <li className="btn btn-ghost btn-circle  hover:text-red-600">
                   <Link href={"/"}>
                     <AiOutlineSearch size={20} />

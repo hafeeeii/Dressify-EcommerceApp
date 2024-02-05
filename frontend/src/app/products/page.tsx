@@ -1,4 +1,3 @@
-import FilterSection from "@/app/products/components/FilterSection";
 import ProductList from "@/app/products/components/ProductList";
 import { useFetch } from "@/lib/hooks/useFetch";
 import { categories } from "@/lib/utils/types";
@@ -14,17 +13,25 @@ const Products = async () => {
     ?.map((categorie: categories) => categorie?.attributes?.products?.data)
     ?.flat();
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen px-10">
       <div className="h-[20vh] w-full bg-purple-300 relative mb-6"></div>
-      <div className="flex flex-row items-center justify-start px-10">
-        <div className=" w-[30%]  mx-6 z-50">
+      {/* filter & sort  layout in small screen */}
+      <div className="flex  justify-end items-center ">
+        <div className="lg:hidden">
           <Drawer />
         </div>
-
-        <Sort />
+        <div className="lg:pr-44  flex justify-between">
+          <Sort />
+        </div>
       </div>
-      <div className="flex flex-col items-end gap-4 ">
-        <ProductList data={products} />
+      {/* Filter & Sort in large screen */}
+      <div className="flex">
+        <div className="hidden lg:flex">
+          <Drawer />
+        </div>
+        <div>
+          <ProductList data={products} />
+        </div>
       </div>
     </div>
   );

@@ -15,10 +15,10 @@ const Card = ({ data }: { data: Product }) => {
   return (
     <div className="flex  ">
       {data && (
-        <div className="sm:w-[20rem] min-h-[25rem]  sm:min-h-[40rem] w-[10rem] ">
+        <div className="  lg:w-[20rem] sm:w-[15rem] min-h-[25rem]  lg:min-h-[30rem]  w-[10rem] ">
           <div className="relative group  ">
             <Link href={`/details/${data.id}`}>
-              <figure className="group relative sm:min-h-[28rem] sm:w-[20rem] min-h-[18rem] w-[10rem] overflow-hidden">
+              <figure className="group relative  sm:w-[15rem] lg:min-h-[28rem] lg:w-[20rem] sm:min-h-[20rem] h-[17rem] w-[10rem] overflow-hidden">
                 <Image
                   alt="product image"
                   src={productImg && productImg}
@@ -39,7 +39,7 @@ const Card = ({ data }: { data: Product }) => {
               </figure>
             </Link>
 
-            <button className="absolute bottom-3 left-1/2 transform -translate-x-1/2  sm:p-4 sm:px-10 sm:bg-white shadow-md rounded-full text-xs lg:hover:bg-black lg:hover:text-white duration-500 lg:opacity-0 group-hover:opacity-100 bg-white btn-sm sm:btn-md">
+            <button className="absolute bottom-3 left-1/2 transform -translate-x-1/2  lg:p-4 lg:px-10 lg:bg-white shadow-md rounded-full text-xs lg:hover:bg-black lg:hover:text-white duration-500 lg:opacity-0 group-hover:opacity-100 bg-white btn-sm lg:btn-md">
               Buy Now
             </button>
 
@@ -55,8 +55,8 @@ const Card = ({ data }: { data: Product }) => {
               </button>
             )}
           </div>
-          <div className="sm:w-[20rem] w-[10rem]">
-            <h2 className="sm:text-md text-sm my-1 sm:font-medium capitalize">
+          <div className="lg:w-[20rem] w-[10rem]">
+            <h2 className="lg:text-md text-sm my-1 lg:font-medium capitalize">
               {data?.attributes?.title}
             </h2>
             <h4 className="text-md">

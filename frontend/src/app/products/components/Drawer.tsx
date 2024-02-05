@@ -9,18 +9,18 @@ const Drawer = () => {
       </div>
       <label
         htmlFor="filter"
-        className="btn bg-black text-white drawer-button lg:hidden flex my-3 cursor-pointer"
+        className="btn bg-black text-white drawer-button lg:hidden flex  cursor-pointer"
       >
         Filter
       </label>
 
-      <div className="drawer-side lg:hidden">
+      <div className="drawer-side lg:hidden z-50">
         <label
           htmlFor="filter"
           aria-label="close sidebar"
-          className="drawer-overlay"
+          className="drawer-overlay h-full"
         ></label>
-        <ul className="menu p-4 w-72 min-h-full bg-white text-base-content my-5 relative">
+        <ul className="menu p-4 w-72 min-h-full bg-white text-base-content relative">
           <FilterSection />
         </ul>
       </div>
