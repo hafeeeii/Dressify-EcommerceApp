@@ -42,8 +42,8 @@ const Navbar = () => {
   }, [scrollDirecton]);
 
   return (
-    <nav >
-      <div className="w-full bg-white  ">
+    <nav className="w-[100vw] bg-white  overflow-x-hidden shadow-md ">
+      <div >
         <Alert />
         <div className="hidden lg:flex justify-between items-center py-3 px-10 font-medium text-xs border ">
           <div className="flex gap-3">
@@ -63,8 +63,8 @@ const Navbar = () => {
       </div>
 
       <div
-        className={`z-50 ease-out duration-700  w-[100vw]  bg-white shadow-lg p-3  ${
-          isScrolled && scrollDirecton === "down" ? "fixed top-0 left-0" : ""
+        className={`z-50 w-[100vw]  bg-white  p-3  ${
+          isScrolled && scrollDirecton === "down" ? "fixed top-0 left-0  shadow-md " : ""
         }`}
       >
         <div className="navbar-start ">

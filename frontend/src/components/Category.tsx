@@ -1,79 +1,31 @@
+import { heroCategory } from "@/lib/data";
+import { HeroCategory } from "@/lib/utils/types";
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
+import SubHeading from "./SubHeading";
 
 const Category = () => {
   return (
-    <div className="flex flex-col gap-1  w-full relative sm:flex-row sm:h-[60vh] ">
-      <div className="relative w-[50%] sm:w-[30%] h-[40vh] sm:h-full overflow-hidden ">
-        <Link href="/collections/dress">
-          <Image
-            src="/women-banner.webp"
-            fill
-            alt="category"
-            className="h-full w-full object-cover hover:scale-110 transition duration-500"
-          />
-          <button className="btn rounded-full hover:text-white normal-case font-normal text-black bg-white absolute bottom-4 left-1/2 transform -translate-x-1/2 ">
-            Shop Clothing
-          </button>
-        </Link>
-      </div>
-      <div className="flex flex-col sm:h-full w-full sm:w-[40%] gap-1">
-        <div className=" relative sm:h-[50%] h-[40vh] overflow-hidden">
-          <Link href="/collections/sunglasses">
+    <div>
+      <SubHeading
+        title="Explore Dressify"
+        paragraph="Upgrade your style with our curated sets. Choose confidence, embrace your unique look."
+      />
+
+      <div className="flex sm:flex-row flex-col gap-1 px-2 ">
+        {heroCategory?.map((category: HeroCategory) => (
+          <div
+            key={category.id}
+            className="sm:h-[39vh] h-[30vh] sm:w-1/3 wf' relative overflow-hidden "
+          >
             <Image
-              src="/cls2_f1.webp"
+              src={category.img}
+              alt="category img"
               fill
-              alt="category"
-              className="h-full w-full object-cover hover:scale-110 transition duration-500"
+              className="object-cover "
             />
-            <button className="btn rounded-full hover:text-white normal-case font-normal text-black bg-white absolute bottom-4 left-1/2 transform -translate-x-1/2 ">
-              Shop Sunglasses
-            </button>
-          </Link>
-        </div>
-        <div className="flex flex-col sm:flex-row sm:h-[50%] gap-1">
-          <div className="h-[40vh] sm:h-full w-full relative overflow-hidden">
-            <Link href="/collections/sandals">
-              <Image
-                src="/accesserious.jpeg"
-                fill
-                alt="category"
-                className="h-full w-full object-cover hover:scale-110 transition duration-500"
-              />
-              <button className="btn rounded-full hover:text-white normal-case font-normal text-black bg-white absolute bottom-4 left-1/2 transform -translate-x-1/2 ">
-                Shop Sandals
-              </button>
-            </Link>
           </div>
-          <div className="h-[40vh] sm:h-full w-full relative overflow-hidden">
-            {" "}
-            <Link href="/collections.bags">
-              <Image
-                src="/bag.jpeg"
-                fill
-                alt="category"
-                className="h-full w-full object-cover hover:scale-110 transition duration-500 "
-              />
-              <button className="btn rounded-full hover:text-white normal-case font-normal text-black bg-white absolute bottom-4 left-1/2 transform -translate-x-1/2 ">
-                Shop Bags
-              </button>
-            </Link>
-          </div>
-        </div>
-      </div>
-      <div className=" relative sm:w-[30%] h-[40vh] sm:h-full overflow-hidden">
-        <Link href="/collections/sneakers">
-          <Image
-            src="/cls5_f1.webp"
-            fill
-            alt="category"
-            className="h-full w-full object-cover hover:scale-110 transition duration-500 "
-          />
-          <button className="btn rounded-full hover:text-white normal-case font-normal text-black bg-white absolute bottom-4 left-1/2 transform -translate-x-1/2 ">
-            Shop Sneakers
-          </button>
-        </Link>
+        ))}
       </div>
     </div>
   );

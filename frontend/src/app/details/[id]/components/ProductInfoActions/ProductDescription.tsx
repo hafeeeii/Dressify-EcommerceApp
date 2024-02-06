@@ -3,9 +3,9 @@ import React from "react";
 
 const ProductDescription = () => {
   return (
-    <div >
+    <div  >
       <div>
-        <p >
+        <p className="text-slate-800">
           We work with monitoring programmes to ensure compliance with our
           social, environmental and health and safety standards for our
           garments. To assess compliance, we have developed a programme of
@@ -14,16 +14,16 @@ const ProductDescription = () => {
           slight curve at the shoulders, which makes it extra flattering. If
           there&#39;s one thing the &#39;90s got right, it&#39;s the basics.
         </p>
-        <div></div>
+        
         <div>
           <h4 className="font-bold mt-10 my-3 text-lg">Outstanding Features</h4>
-          <p>
+          <p className="text-slate-800">
             The garments labelled as Committed are products that have been
             produced using sustainable fibres or processes, reducing their
             environmental impact. Umino&#39;s goal is to support the implementation
             of practices more committed to the environment.
           </p>
-          <ul className="list-disc">
+          <ul className="list-disc text-slate-800">
             <li>
               This take on the classic cardigan showcases a zippered stand
               collar.
@@ -44,7 +44,7 @@ const ProductDescription = () => {
       </div>
       <div>
         <h4 className="font-bold mt-10 my-3 text-lg">Outstanding Features</h4>
-        <p>
+        <p className="text-slate-800">
           Detailed with a collar and in need of no fussy details or prints to
           catch the eye, it is made from cotton for breathable comfort that&#39;s
           perfect for wrapping over everything, whether day or night and a safer

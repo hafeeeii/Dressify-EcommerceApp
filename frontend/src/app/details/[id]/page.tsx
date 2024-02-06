@@ -118,7 +118,7 @@ const Detail = async ({
           </div>
           <div>
             <SubHeading
-              title="Trending"
+              title="Trending This Week"
               paragraph="Here’s some of our most popular products people are in love with."
             />
             <FeaturedProduct type="trending" />

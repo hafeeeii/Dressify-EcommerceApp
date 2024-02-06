@@ -1,3 +1,5 @@
+
+
 export type Tabs = {
   id: number;
   content: React.JSX.Element;
@@ -106,3 +108,18 @@ export type Hero = {
     img: Img;
   };
 };
+
+export type Testimonial = {
+  id:number;
+  img:string;
+  comment:string;
+  name:string;
+  isVerified:boolean;
+ 
+}
+
+export type HeroCategory = {
+  id:number;
+  title:string;
+  img:string;
+}

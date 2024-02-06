@@ -11,7 +11,6 @@ const Card = ({ data }: { data: Product }) => {
     data?.attributes?.img2?.data?.attributes?.formats?.medium?.url;
   const isNew = data?.attributes?.isNew;
   const availability = data?.attributes?.availability;
-  console.log(availability, "is this availavle");
   return (
     <div className="flex  ">
       {data && (

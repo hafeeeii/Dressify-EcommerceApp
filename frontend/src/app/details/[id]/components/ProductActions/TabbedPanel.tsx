@@ -58,7 +58,7 @@ const TabbedPanel = () => {
         transition={{
           duration: 0.4,
         }}
-        className="my-10 "
+        className="my-10  "
       >
         {tabs[activeTab].content}
       </motion.div>

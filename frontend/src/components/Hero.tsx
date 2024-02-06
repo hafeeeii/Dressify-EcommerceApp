@@ -49,7 +49,7 @@ const Hero = ({ heroImg }: { heroImg: Hero[] }) => {
           }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1.4 }}
-          className="absolute  lg:top-[20%]  lg:left-[10%] top-[40%] left-[6%]  lg:w-[40vw] w-[60vw] flex flex-col  lg:text-center items-center gap-3  "
+          className="absolute  lg:top-[20%]  lg:left-[10%] top-[40%] left-[6%]  lg:w-[40vw] w-[60vw] flex flex-col  lg:text-center items-start  sm:items-center gap-3  "
           key={heroImg[currentImage]?.id}
         >
           <div className="lg:text-6xl text-3xl  font-medium capitalize ">
@@ -61,7 +61,7 @@ const Hero = ({ heroImg }: { heroImg: Hero[] }) => {
             So soft, you don&#39;t want to take it of
           </span>
 
-          <button className="bg-black text-white w-[40%] p-3 rounded-full my-5 uppercase text-xs font-bold">
+          <button className="bg-black text-white sm:w-[40%] w-[70%] p-3 rounded-full my-5 uppercase text-xs font-bold">
             Shop Now
           </button>
         </motion.div>

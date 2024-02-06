@@ -19,7 +19,7 @@ const SideMenu = () => {
   return (
     <div>
       {!isAuthenticated ? (
-        <RegisterLink  className="mx-3" postLoginRedirectURL="/">
+        <RegisterLink  postLoginRedirectURL="/">
           <button className="btn btn-ghost  hover:text-red-600  ">
             Sign up
           </button>
