@@ -8,7 +8,6 @@ import FeaturedProduct from "@/components/FeaturedProduct";
 import ImgMagnifier from "./components/ProductInfoActions/ImgMagnifier";
 import { useFetch } from "@/lib/hooks/useFetch";
 import { Product } from "@/lib/utils/types";
-import Image from "next/image";
 import SubHeading from "@/components/SubHeading";
 
 const Detail = async ({
@@ -26,19 +25,16 @@ const Detail = async ({
   const productImg2 = detailData?.attributes?.img2?.data?.attributes?.url;
 
   return (
-    <div className="min-h-screen  w-full p-2 flex flex-col  justify-center items-center ">
+    <div className="min-h-screen  w-full  my-10 flex flex-col  items-center flex-wrap ">
       {detailData && (
         <>
-          <div className="flex lg:gap-6 lg:flex-row flex-col items-center justify-center">
-            <div className="flex lg:flex-row flex-col gap-3">
-              <div className="md:min-h-[70vh] min-h-[63vh] mb-2">
+          <div className="flex lg:gap-6 lg:flex-row flex-col items-center lg:items-start lg:justify-center ">
+            <div className="flex  flex-col gap-3">
+              <div className="md:h-[70vh] h-[63vh] relative">
                 <ImgMagnifier src={productImg} width={400} height={400} />
               </div>
-              <div className="">
-                <Image src={productImg2} alt="img" width={100} height={100} />
-              </div>
             </div>
-            <div className="flex flex-col gap-2 ">
+            <div className="flex flex-col gap-2 px-3 ">
               <h2 className="text-2xl  py-3">
                 {detailData?.attributes?.title}
               </h2>

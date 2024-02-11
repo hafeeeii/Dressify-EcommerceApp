@@ -10,7 +10,7 @@ const WishListCard = () => {
   return (
     <div>
       {wishListData?.map((data) => (
-        <div key={data.id} className="lg:w-[20rem] min-h-[25rem]  lg:min-h-[40rem] w-[10rem] ">
+        <div key={data.id} className="lg:w-[20rem] min-h-[25rem]  lg:min-h-[40rem] w-[10rem]  ">
           <Link href={`/details/${data.id}`}>
             <figure className="group relative lg:min-h-[28rem]lg:w-[20rem] min-h-[18rem] w-[10rem] overflow-hidden">
               <Image

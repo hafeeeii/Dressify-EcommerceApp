@@ -6,13 +6,12 @@ import { usePathname, useSearchParams, useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { BsSearch } from "react-icons/bs";
 
-const BASE_URL = process.env.BASE_URL;
-
 const SearchBar = () => {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const { replace } = useRouter();
   const [searchedData, setSearchedData] = useState([]);
+  const [isClicked, setIsClicked] = useState(false);
 
   const handleSearch = (term: string) => {
     const params = new URLSearchParams(searchParams);
@@ -30,8 +29,9 @@ const SearchBar = () => {
   console.log(searchTerm, "this si");
 
   const handleSearchBtn = () => {
+    setIsClicked(true);
     fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/products?populate=*&_q=${searchTerm}`,
+      `https://dressify-ecommerceapp.onrender.com/api/products?populate=*&_q=${searchTerm}`,
       {
         headers: {
           Authorization: "bearer " + process.env.NEXT_PUBLIC_API_TOKEN,
@@ -47,6 +47,7 @@ const SearchBar = () => {
       });
   };
 
+  console.log(searchedData, "ths searched one");
   return (
     <div>
       <div className=" relative w-[80vw]   text-gray-600 ">
@@ -57,6 +58,7 @@ const SearchBar = () => {
           placeholder="Search..."
           onChange={(e) => handleSearch(e.target.value)}
           defaultValue={searchParams.get("query")?.toString()}
+          onKeyDown={(e) => e.key === "Enter" && handleSearchBtn()}
         />
         <button
           onClick={handleSearchBtn}
@@ -66,11 +68,12 @@ const SearchBar = () => {
           <BsSearch size={18} />
         </button>
       </div>
-
-      <div className="flex gap-4 flex-wrap my-7">
-        {searchedData?.map((product: Product) => (
-          <Card data={product} />
-        ))}
+      <div className="flex gap-4 flex-wrap my-7 justify-center">
+        {searchedData?.length > 0 && isClicked ? (
+          searchedData.map((product: Product) => <Card data={product} />)
+        ) : (
+          <div>No Item Found</div>
+        )}
       </div>
     </div>
   );

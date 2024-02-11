@@ -27,7 +27,9 @@ const Countdown = () => {
   ];
 
   return (
-    <div className="relative lg:h-[100vh] w-[100vw] h-[37vh] sm:h-[69vh]">
+    <div className="relative lg:h-[100vh] w-[100vw] h-[37vh] sm:h-[69vh] my-12{searchedData?.map((product: Product) => (
+  <Card data={product} />
+))}">
       <Image src="/fashion2-countdown_1.jpg" alt="img" fill objectFit="cover" />
       <div className=" absolute lg:top-[25%] top-[10%] lg:left-[12%] left-[4%] flex flex-col sm:gap-8 gap-2 lg:w-full w-[60vw] ">
         <p className="uppercase text-xs text-gray-600 flex flex-wrap">

@@ -1,3 +1,4 @@
+"use client";
 import { heroCategory } from "@/lib/data";
 import { HeroCategory } from "@/lib/utils/types";
 import Image from "next/image";
