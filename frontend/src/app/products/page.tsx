@@ -13,7 +13,7 @@ const Products = async () => {
     ?.map((categorie: categories) => categorie?.attributes?.products?.data)
     ?.flat();
   return (
-    <div className="min-h-screen px-10">
+    <div className="min-h-screen px-2">
       <div className="h-[20vh] w-full bg-purple-300 relative mb-6"></div>
       {/* filter & sort  layout in small screen */}
       <div className="flex  justify-end items-center ">

@@ -102,7 +102,7 @@ const Navbar = () => {
 
               <ul className="flex font-medium pr-3">
                 <li className="btn btn-ghost btn-circle  hover:text-red-600">
-                  <Link href={"/"}>
+                  <Link href={"/search"}>
                     <AiOutlineSearch size={20} />
                   </Link>
                 </li>

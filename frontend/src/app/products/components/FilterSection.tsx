@@ -47,7 +47,7 @@ const FilterSection = () => {
   const [values, setValues] = useState([MIN, MAX]);
 
   return (
-    <div className="flex  flex-col">
+    <div className="flex  flex-col ">
       <h2 className="text-md font-medium mb-5">Category</h2>
       <ul className="text-sm text-slate-600 flex flex-col gap-6 ">
         {uniqueCategory?.map((category, index) => (

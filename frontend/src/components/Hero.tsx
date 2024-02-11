@@ -23,7 +23,7 @@ const Hero = ({ heroImg }: { heroImg: Hero[] }) => {
   }, []);
 
   return (
-    <div className=" lg:h-[100vh] h-[75vh]  w-[100vw] overflow-hidden ">
+    <header className=" lg:h-[100vh] h-[75vh]  w-[100vw] overflow-hidden ">
       <div className="h-full w-full relative overflow-hidden">
         {heroImg?.map((data: Hero, index) => (
           <div
@@ -79,7 +79,7 @@ const Hero = ({ heroImg }: { heroImg: Hero[] }) => {
           <AiOutlineArrowLeft />
         </button>
       </div>
-    </div>
+    </header>
   );
 };
 

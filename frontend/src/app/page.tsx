@@ -13,7 +13,6 @@ export default async function Home() {
       <Hero heroImg={heroImg?.data} />
       <Category />
 
-      <div></div>
       <div>
         <SubHeading
           title="Trending This Week"
@@ -22,7 +21,7 @@ export default async function Home() {
         <FeaturedProduct type="trending" />
       </div>
       <Countdown />
-      <Testimonials/>
+      <Testimonials />
       <div>
         <SubHeading
           title="Popular On Dressify"

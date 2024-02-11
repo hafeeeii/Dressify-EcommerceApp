@@ -17,7 +17,7 @@ const SideMenu = () => {
   };
 
   return (
-    <div>
+    <aside>
       {!isAuthenticated ? (
         <RegisterLink  postLoginRedirectURL="/">
           <button className="btn btn-ghost  hover:text-red-600  ">
@@ -65,7 +65,7 @@ const SideMenu = () => {
           </li>
         </ul>
       )}
-    </div>
+    </aside>
   );
 };
 

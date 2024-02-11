@@ -24,6 +24,9 @@ const Category = () => {
               fill
               className="object-cover "
             />
+            <button className="primary-btn absolute bottom-3 left-1/2 -translate-x-1/2 btn btn-wide rounded-full ">
+              {category.title}
+            </button>
           </div>
         ))}
       </div>
