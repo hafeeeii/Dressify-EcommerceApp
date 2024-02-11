@@ -48,22 +48,24 @@ const SearchBar = () => {
   };
 
   return (
-    <div className=" relative w-[80vw]   text-gray-600 ">
-      <input
-        className="border-2 border-gray-300 bg-white h-10 w-full px-5  rounded-full text-sm focus:outline-none"
-        type="search"
-        name="search"
-        placeholder="Search..."
-        onChange={(e) => handleSearch(e.target.value)}
-        defaultValue={searchParams.get("query")?.toString()}
-      />
-      <button
-        onClick={handleSearchBtn}
-        type="submit"
-        className="absolute right-0 top-0   mr-4 mt-2 text-red-700"
-      >
-        <BsSearch size={18} />
-      </button>
+    <div>
+      <div className=" relative w-[80vw]   text-gray-600 ">
+        <input
+          className="border-2 border-gray-300 bg-white h-10 w-full px-5  rounded-full text-sm focus:outline-none"
+          type="search"
+          name="search"
+          placeholder="Search..."
+          onChange={(e) => handleSearch(e.target.value)}
+          defaultValue={searchParams.get("query")?.toString()}
+        />
+        <button
+          onClick={handleSearchBtn}
+          type="submit"
+          className="absolute right-0 top-0   mr-4 mt-2 text-red-700"
+        >
+          <BsSearch size={18} />
+        </button>
+      </div>
 
       <div className="flex gap-4 flex-wrap my-7">
         {searchedData?.map((product: Product) => (

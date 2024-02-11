@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { Hero } from "@/lib/utils/types";
 
 const Hero = ({ heroImg }: { heroImg: Hero[] }) => {
-  const [currentImage, setCurrentImage] = useState(0);
+  const [currentImage, setCurrentImage] = useState(1);
   const nextSlide = () => {
     setCurrentImage((prevImage) => (prevImage + 1) % heroImg?.length);
   };
@@ -29,7 +29,7 @@ const Hero = ({ heroImg }: { heroImg: Hero[] }) => {
           <div
             key={index}
             className={` h-full w-full   opacity-0 transition-opacity duration-1000   ${
-              currentImage === index ? "opacity-100 " : ""
+              currentImage === data.id ? "opacity-100 " : ""
             }`}
           >
             <Image
@@ -42,29 +42,31 @@ const Hero = ({ heroImg }: { heroImg: Hero[] }) => {
           </div>
         ))}
 
-        <motion.div
-          initial={{
-            y: 100,
-            opacity: 0,
-          }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1.4 }}
-          className="absolute  lg:top-[20%]  lg:left-[10%] top-[40%] left-[6%]  lg:w-[40vw] w-[60vw] flex flex-col  lg:text-center items-start  sm:items-center gap-3  "
-          key={heroImg[currentImage]?.id}
-        >
-          <div className="lg:text-6xl text-3xl  font-medium capitalize ">
-            <h2>{heroImg[currentImage]?.attributes?.title}</h2>
-          </div>
+        {heroImg && (
+          <motion.div
+            initial={{
+              y: 100,
+              opacity: 0,
+            }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1.4 }}
+            className="absolute  lg:top-[20%]  lg:left-[10%] top-[40%] left-[6%]  lg:w-[40vw] w-[60vw] flex flex-col  lg:text-center items-start  sm:items-center gap-3  "
+            key={heroImg[currentImage]?.id}
+          >
+            <div className="lg:text-6xl text-3xl  font-medium capitalize ">
+              <h2>{heroImg[currentImage]?.attributes?.title}</h2>
+            </div>
 
-          <span className="opacity-70 mt-2  text-sm lg:text-md ">
-            {" "}
-            So soft, you don&#39;t want to take it of
-          </span>
+            <span className="opacity-70 mt-2  text-sm lg:text-md ">
+              {" "}
+              So soft, you don&#39;t want to take it of
+            </span>
 
-          <button className="bg-black text-white sm:w-[40%] w-[70%] p-3 rounded-full my-5 uppercase text-xs font-bold">
-            Shop Now
-          </button>
-        </motion.div>
+            <button className="bg-black text-white sm:w-[40%] w-[70%] p-3 rounded-full my-5 uppercase text-xs font-bold">
+              Shop Now
+            </button>
+          </motion.div>
+        )}
 
         <button
           className="absolute right-0 top-1/2 transform -translate-y-1/2 w-16 h-16 rounded-full bg-gray-200  lg:flex items-center justify-center mr-4 hover:bg-black hover:text-white duration-500 hidden"
