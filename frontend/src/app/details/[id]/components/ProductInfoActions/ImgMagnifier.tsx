@@ -30,7 +30,8 @@ const ImgMagnifier = ({
         position: "relative",
         maxHeight: height,
         width: width,
-        overflow:'hidden'
+        overflow:'hidden',
+        borderRadius:'10px'
       }}
     >
       <Image

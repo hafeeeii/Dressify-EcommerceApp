@@ -131,7 +131,7 @@ export const navigation: Navigation[] = [
   },
   {
     title: "Blog",
-    href: "/",
+    href: "/blog",
   },
   {
     title: "Page",

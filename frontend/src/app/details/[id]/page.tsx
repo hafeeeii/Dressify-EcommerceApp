@@ -9,6 +9,7 @@ import ImgMagnifier from "./components/ProductInfoActions/ImgMagnifier";
 import { useFetch } from "@/lib/hooks/useFetch";
 import { Product } from "@/lib/utils/types";
 import SubHeading from "@/components/SubHeading";
+import { BsEye } from "react-icons/bs";
 
 const Detail = async ({
   params,
@@ -25,28 +26,56 @@ const Detail = async ({
   const productImg2 = detailData?.attributes?.img2?.data?.attributes?.url;
 
   return (
-    <div className="min-h-screen  w-[100vw] px-4  my-10 flex flex-col  items-center flex-wrap ">
+    <div className="min-h-screen  w-[100vw] px-4  lg:my-24 my-4 flex flex-col  items-center flex-wrap ">
       {detailData && (
         <>
-          <div className="flex lg:gap-6 lg:flex-row flex-col items-center lg:items-start lg:justify-center ">
+          <div className="flex lg:gap-10 lg:flex-row flex-col items-center lg:items-start lg:justify-center ">
             <ImgMagnifier src={productImg} width={400} height={600} />
 
             {/* Description */}
 
-            <div className="flex flex-col gap-2 lg:w-[50vw] sm:[80vw] ">
-              <h2 className="text-2xl  py-3 capitalize">
+            <div className="flex flex-col gap-5 lg:w-[50vw] sm:[80vw] ">
+              <h2 className="text-3xl   capitalize  tracking-wide">
                 {detailData?.attributes?.title}
               </h2>
-              <h3 className="text-xl font-bold">{`$${detailData?.attributes?.price}`}</h3>
-              <h6 className="text-red-600">17 sold in last 24 hours</h6>
+           
+              <div className="flex flex-wrap items-center gap-8">
 
-              <p>
+              <div className="rating rating-xs">
+              <input type="radio" name="rating-1" className="mask mask-star" />
+              <input
+                type="radio"
+                name="rating-1"
+                className="mask mask-star"
+                checked
+              />
+              <input type="radio" name="rating-1" className="mask mask-star" />
+              <input type="radio" name="rating-1" className="mask mask-star" />
+              <input type="radio" name="rating-1" className="mask mask-star" />
+            </div>
+              <p className="text-red-600 text-sm">🔥17 sold in last 24 hours</p>
+
+
+              </div>
+
+
+              <h3 className="text-3xl font-bold">{`$${detailData?.attributes?.price}`}</h3>
+
+              <p className="text-slate-500">
                 {detailData?.attributes?.description
                   ? detailData?.attributes?.description
                   : "   Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasmollitia quidem quo. Suscipit rerum aliquam distinctio, placequaerat nam assumenda numquam, officia atque odit debitis a eumsunt fugiat aliquid. lorem1000"}
               </p>
-              <h6>13 people are viewing this right now</h6>
-              <h5>color:Black</h5>
+              <div className="flex items-center gap-3">
+                  <div className="bg-black h-fit w-fit text-white py-1 px-2">
+
+              <BsEye size={14} />
+                  </div>
+              <p className="text-slate-500">13 people are viewing this right now</p>
+              </div>
+              <h3><span className="text-slate-500">
+              color:
+                </span>Black</h3>
               <div>
                 {colors?.map((color, index) => (
                   <button
