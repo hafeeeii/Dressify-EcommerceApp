@@ -1,7 +1,6 @@
 import React from "react";
 import SubHeading from "./SubHeading";
-import { testimonialsData } from "@/lib/data";
-import { Testimonial } from "@/lib/utils/types";
+import { testimonialsData } from "@/lib/data";;
 import Image from "next/image";
 
 const Testimonials = () => {
@@ -12,7 +11,7 @@ const Testimonials = () => {
         paragraph="Customers love our products and we always strive to please them all."
       />
       <div className="  px-5 flex justify-center gap-5 flex-wrap">
-        {testimonialsData?.map((data: Testimonial) => (
+        {testimonialsData?.map((data) => (
           <div
             key={data.id}
             className=" flex flex-col items-center gap-4 border p-8 w-[28rem]  rounded-[5px]"

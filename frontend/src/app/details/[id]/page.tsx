@@ -1,6 +1,6 @@
 import React from "react";
 import { MdScale } from "react-icons/md";
-import { colors } from "@/lib/data";
+import { colors, sizes } from "@/lib/data";
 import AddToCart from "./components/ProductActions/AddToCart";
 import BuyBtn from "./components/ProductActions/BuyBtn";
 import TabbedPanel from "./components/ProductActions/TabbedPanel";
@@ -25,17 +25,16 @@ const Detail = async ({
   const productImg2 = detailData?.attributes?.img2?.data?.attributes?.url;
 
   return (
-    <div className="min-h-screen  w-full  my-10 flex flex-col  items-center flex-wrap ">
+    <div className="min-h-screen  w-[100vw] px-4  my-10 flex flex-col  items-center flex-wrap ">
       {detailData && (
         <>
           <div className="flex lg:gap-6 lg:flex-row flex-col items-center lg:items-start lg:justify-center ">
-            <div className="flex  flex-col gap-3">
-              <div className="md:h-[70vh] h-[63vh] relative">
-                <ImgMagnifier src={productImg} width={400} height={400} />
-              </div>
-            </div>
-            <div className="flex flex-col gap-2 px-3 ">
-              <h2 className="text-2xl  py-3">
+            <ImgMagnifier src={productImg} width={400} height={600} />
+
+            {/* Description */}
+
+            <div className="flex flex-col gap-2 lg:w-[50vw] sm:[80vw] ">
+              <h2 className="text-2xl  py-3 capitalize">
                 {detailData?.attributes?.title}
               </h2>
               <h3 className="text-xl font-bold">{`$${detailData?.attributes?.price}`}</h3>
@@ -62,18 +61,14 @@ const Detail = async ({
               </div>
               <h5>Size:L</h5>
               <ul className="flex flex-row flex-wrap gap-2 mb-4">
-                <li className=" p-1 px-5 rounded-lg primary-btn font-medium ">
-                  S
-                </li>
-                <li className=" p-1 px-5 rounded-lg primary-btn font-medium">
-                  L
-                </li>
-                <li className=" p-1 px-5 rounded-lg primary-btn font-medium">
-                  M
-                </li>
-                <li className=" p-1 px-5 rounded-lg primary-btn font-medium">
-                  XL
-                </li>
+                {sizes?.map((size, index) => (
+                  <li
+                    key={index}
+                    className=" p-1 px-5 rounded-lg primary-btn font-medium "
+                  >
+                    {size}
+                  </li>
+                ))}
               </ul>
               <div className="flex flex-row flex-wrap gap-2">
                 <div className="btn primary-btn">
@@ -108,7 +103,8 @@ const Detail = async ({
             </div>
           </div>
 
-          {/* description */}
+          {/* Detail description */}
+
           <div className="md:px-10 px-4 mt-6">
             <TabbedPanel />
           </div>

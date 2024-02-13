@@ -12,6 +12,7 @@ import {
 import { CartInitialType } from "@/store/slices/cartSlice";
 import { WishListInitialType } from "@/store/slices/wishListSlice";
 import Alert from "./Alert";
+import { navigation } from "@/lib/data";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -43,7 +44,7 @@ const Navbar = () => {
 
   return (
     <nav className="w-[100vw] bg-white  overflow-x-hidden shadow-md ">
-      <div >
+      <div>
         <Alert />
         <div className="hidden lg:flex justify-between items-center py-3 px-10 font-medium text-xs border ">
           <div className="flex gap-3">
@@ -63,97 +64,75 @@ const Navbar = () => {
       </div>
 
       <div
-        className={`z-50 w-[100vw]  bg-white  p-3  ${
-          isScrolled && scrollDirecton === "down" ? "fixed top-0 left-0  shadow-md " : ""
+        className={`z-50 w-[100vw]   bg-white py-3 flex justify-between items-center px-4 ${
+          isScrolled && scrollDirecton === "down"
+            ? "fixed top-0 left-0  shadow-md "
+            : ""
         }`}
       >
-        <div className="navbar-start ">
-          <div className="drawer  ">
-            <input id="my-drawer" type="checkbox" className="drawer-toggle" />
+        <div className="drawer  lg:hidden">
+          <input id="my-drawer" type="checkbox" className="drawer-toggle" />
 
-            <div className=" w-[100vw] px-4 flex justify-between items-center">
-              <label htmlFor="my-drawer" className=" drawer-button lg:hidden">
-                <BsMenuButtonFill size={24} />
-              </label>
-              <Link
-                href={"/"}
-                className="btn btn-ghost normal-case font-bold text-2xl"
-              >
-                Dressify
-              </Link>
-
-              <ul className="hidden lg:flex gap-10 text-sm font-medium">
-                <li className="hover:text-red-600 cursor-pointer">
-                  <Link href="/">Home</Link>
+          <label htmlFor="my-drawer" className=" drawer-button ">
+            <BsMenuButtonFill size={24} />
+          </label>
+          <div className="drawer-side h-[100vh] z-[99999]  lg:hidden ">
+            <label
+              htmlFor="my-drawer"
+              aria-label="close sidebar"
+              className="drawer-overlay"
+            ></label>
+            <ul className=" p-4 w-80 min-h-full bg-white text-red-600 font-medium  flex flex-col gap-11 items-center">
+              {navigation?.map((data, index) => (
+                <li key={index}>
+                  <Link href={data.href}>{data.title}</Link>
                 </li>
-                <li className="hover:text-red-600 cursor-pointer">
-                  <Link href={"/"}>Shop</Link>
-                </li>
-                <li className="hover:text-red-600 cursor-pointer">
-                  <Link href="/products">Products</Link>
-                </li>
-                <li className="hover:text-red-600 cursor-pointer">
-                  <Link href={"/"}>Blog</Link>
-                </li>
-                <li className="hover:text-red-600 cursor-pointer">
-                  <Link href={"/"}>Page</Link>
-                </li>
-              </ul>
-
-              <ul className="flex font-medium pr-3">
-                <li className="btn btn-ghost btn-circle  hover:text-red-600">
-                  <Link href={"/search"}>
-                    <AiOutlineSearch size={20} />
-                  </Link>
-                </li>
-                <li className="btn btn-ghost btn-circle  hover:text-red-600 relative">
-                  <Link href="/wishlist">
-                    {" "}
-                    <AiOutlineHeart size={20} />
-                    <div className="badge absolute top-1 right-0 w-4  bg-red-600 border-none text-white">
-                      {wishListData?.length}
-                    </div>
-                  </Link>
-                </li>
-
-                <li className="btn btn-ghost btn-circle  hover:text-red-600 relative">
-                  <Link href={"/cart"}>
-                    {" "}
-                    <AiOutlineShoppingCart size={20} />
-                    <div className="badge absolute top-1 right-0 w-5 bg-red-600 border-none text-white">
-                      {itemData?.length}
-                    </div>
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            <div className="drawer-side h-[100vh] z-[99999]  lg:hidden ">
-              <label
-                htmlFor="my-drawer"
-                aria-label="close sidebar"
-                className="drawer-overlay"
-              ></label>
-              <ul className=" p-4 w-80 min-h-full bg-white text-red-600 font-medium  flex flex-col gap-11 items-center">
-                <li>
-                  <Link href="/">Home</Link>
-                </li>
-                <li>
-                  <Link href={"/"}>Shop</Link>
-                </li>
-                <li>
-                  <Link href="/products">Products</Link>
-                </li>
-                <li>
-                  <Link href={"/"}>Blog</Link>
-                </li>
-                <li>
-                  <Link href={"/"}>Page</Link>
-                </li>
-              </ul>
-            </div>
+              ))}
+            </ul>
           </div>
         </div>
+
+        <Link
+          href={"/"}
+          className="btn btn-ghost normal-case font-bold text-2xl"
+        >
+          Dressify
+        </Link>
+
+        <ul className="hidden lg:flex gap-10 text-sm font-medium">
+          {navigation?.map((data, index) => (
+            <li key={index} className="hover:text-red-600 cursor-pointer">
+              <Link href={data.href}>{data.title}</Link>
+            </li>
+          ))}
+        </ul>
+
+        <ul className="flex font-medium justify-between  items-center mx-2">
+          <li className="btn btn-ghost btn-circle  hover:text-red-600">
+            <Link href={"/search"}>
+              <AiOutlineSearch size={20} />
+            </Link>
+          </li>
+          <li className="btn btn-ghost btn-circle  hover:text-red-600 relative">
+            <Link href="/wishlist">
+              {" "}
+              <AiOutlineHeart size={20} />
+              <div className="badge absolute top-1 right-0 w-4  bg-red-600 border-none text-white">
+                {wishListData?.length}
+              </div>
+            </Link>
+          </li>
+
+          <li className="btn btn-ghost btn-circle  hover:text-red-600 relative">
+            <Link href={"/cart"}>
+              {" "}
+              <AiOutlineShoppingCart size={20} />
+              <div className="badge absolute top-1 right-0 w-5 bg-red-600 border-none text-white">
+                {itemData?.length}
+              </div>
+            </Link>
+          </li>
+        </ul>
       </div>
     </nav>
   );

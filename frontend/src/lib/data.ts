@@ -1,4 +1,10 @@
 import { add } from "date-fns";
+import {
+  HeroCategory,
+  Navigation,
+  SortOptions,
+  Testimonial,
+} from "./utils/types";
 
 export const brandsName = {
   cloths: [
@@ -30,7 +36,7 @@ export const brandsName = {
   ],
 };
 
-export const collections = [
+export const collections: string[] = [
   "Dresses",
   "Jackets",
   "Pants",
@@ -40,8 +46,15 @@ export const collections = [
   "Outerwear",
 ];
 
-export const colors = ["red", "blue", "green", "yellow", "purple", "orange"];
-export const sizes = ["S", "M", "L", "XL", "XXL"];
+export const colors: string[] = [
+  "red",
+  "blue",
+  "green",
+  "yellow",
+  "purple",
+  "orange",
+];
+export const sizes: string[] = ["S", "M", "L", "XL", "XXL"];
 
 export const futureDate = add(new Date(), {
   days: 20,
@@ -49,14 +62,14 @@ export const futureDate = add(new Date(), {
   minutes: 40,
 });
 
-export const sortOptions = [
+export const sortOptions: SortOptions[] = [
   { label: "Price (lowest)", value: "price-asc" },
   { label: "Price (highest)", value: "price-desc" },
   { label: "A-Z", value: "name-asc" },
   { label: "Z-A ", value: "name-desc" },
 ];
 
-export const testimonialsData = [
+export const testimonialsData: Testimonial[] = [
   {
     id: 1,
     img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -84,23 +97,44 @@ export const testimonialsData = [
     name: " Siarhei Dzenisenka ",
     isVerified: true,
   },
-
 ];
 
-export const heroCategory =[
+export const heroCategory: HeroCategory[] = [
   {
-    id:1,
-    title:"Men's",
-    img:"https://images.unsplash.com/photo-1530735038726-a73fd6e6a349?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    id: 1,
+    title: "Men's",
+    img: "https://images.unsplash.com/photo-1530735038726-a73fd6e6a349?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    id:2,
-    title:"Women's",
-    img:"https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    id: 2,
+    title: "Women's",
+    img: "https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    id:3,
-    title:"Hoodies",
-    img:"https://images.unsplash.com/photo-1542053254535-def95e944232?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-  }
-]
+    id: 3,
+    title: "Hoodies",
+    img: "https://images.unsplash.com/photo-1542053254535-def95e944232?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+];
+export const navigation: Navigation[] = [
+  {
+    title: "Home",
+    href: "/",
+  },
+  {
+    title: "Shop",
+    href: "/",
+  },
+  {
+    title: "Products",
+    href: "/products",
+  },
+  {
+    title: "Blog",
+    href: "/",
+  },
+  {
+    title: "Page",
+    href: "/",
+  },
+];

@@ -28,8 +28,9 @@ const ImgMagnifier = ({
     <div
       style={{
         position: "relative",
-        height: height,
+        maxHeight: height,
         width: width,
+        overflow:'hidden'
       }}
     >
       <Image

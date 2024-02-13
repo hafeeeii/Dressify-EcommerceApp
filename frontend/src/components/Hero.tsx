@@ -4,9 +4,10 @@ import React, { useState, useEffect } from "react";
 import { AiOutlineArrowRight, AiOutlineArrowLeft } from "react-icons/ai";
 import { motion } from "framer-motion";
 import { Hero } from "@/lib/utils/types";
+import Link from "next/link";
 
 const Hero = ({ heroImg }: { heroImg: Hero[] }) => {
-  const [currentImage, setCurrentImage] = useState(1);
+  const [currentImage, setCurrentImage] = useState(0);
   const nextSlide = () => {
     setCurrentImage((prevImage) => (prevImage + 1) % heroImg?.length);
   };
@@ -29,7 +30,7 @@ const Hero = ({ heroImg }: { heroImg: Hero[] }) => {
           <div
             key={index}
             className={` h-full w-full   opacity-0 transition-opacity duration-1000   ${
-              currentImage === data.id ? "opacity-100 " : ""
+              currentImage === index ? "opacity-100 " : ""
             }`}
           >
             <Image
@@ -62,9 +63,12 @@ const Hero = ({ heroImg }: { heroImg: Hero[] }) => {
               So soft, you don&#39;t want to take it of
             </span>
 
-            <button className="bg-black text-white sm:w-[40%] w-[70%] p-3 rounded-full my-5 uppercase text-xs font-bold">
-              Shop Now
-            </button>
+            <Link
+              href="/products"
+              className=" text-center bg-black text-white sm:w-[40%] w-[70%] p-3 rounded-full my-5 uppercase text-xs font-bold"
+            >
+              <button>Shop Now</button>
+            </Link>
           </motion.div>
         )}
 

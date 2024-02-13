@@ -49,7 +49,7 @@ const SearchBar = () => {
 
   console.log(searchedData, "ths searched one");
   return (
-    <div>
+    <div className="flex flex-col items-center">
       <div className=" relative w-[80vw]   text-gray-600 ">
         <input
           className="border-2 border-gray-300 bg-white h-10 w-full px-5  rounded-full text-sm focus:outline-none"
@@ -75,6 +75,8 @@ const SearchBar = () => {
           <div>No Item Found</div>
         )}
       </div>
+
+  
     </div>
   );
 };

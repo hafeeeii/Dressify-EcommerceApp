@@ -1,5 +1,3 @@
-
-
 export type Tabs = {
   id: number;
   content: React.JSX.Element;
@@ -110,16 +108,25 @@ export type Hero = {
 };
 
 export type Testimonial = {
-  id:number;
-  img:string;
-  comment:string;
-  name:string;
-  isVerified:boolean;
- 
-}
+  id: number;
+  img: string;
+  comment: string;
+  name: string;
+  isVerified: boolean;
+  star: number;
+};
+export type SortOptions = {
+  label: string;
+  value: string;
+};
 
 export type HeroCategory = {
-  id:number;
-  title:string;
-  img:string;
-}
+  id: number;
+  title: string;
+  img: string;
+};
+
+export type Navigation = {
+  title: string;
+  href: string;
+};
