@@ -26,6 +26,7 @@ const ImgMagnifier = ({
   const [showMagnifier, setShowMagnifier] = useState(false);
   return (
     <div
+    className="max-w-[250px] sm:max-w-full"
       style={{
         position: "relative",
         maxHeight: height,

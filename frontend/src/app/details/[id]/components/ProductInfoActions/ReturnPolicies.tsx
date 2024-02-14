@@ -2,7 +2,7 @@ import React from 'react'
 
 const ReturnPolicies = () => {
   return (
-    <div className='flex flex-col gap-11 text-slate-800'>
+    <div className='flex flex-col gap-11 text-slate-800 tracking-wide text-sm sm:text-sm'>
         <p>
         Returns will be accepted for up to 10 days of Customer’s receipt or tracking number on unworn items. You, as a Customer, are obliged to inform us via email before you return the item, only in the case of:
         </p>

@@ -1,7 +1,12 @@
-'use client'
+"use client";
 import { Product } from "@/lib/utils/types";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import { CartInitialType, addToCart, decrement, increment } from "@/store/slices/cartSlice";
+import {
+  CartInitialType,
+  addToCart,
+  decrement,
+  increment,
+} from "@/store/slices/cartSlice";
 import { addToCompare } from "@/store/slices/compareSlice";
 import {
   WishListInitialType,
@@ -17,9 +22,13 @@ import { AiOutlineHeart, AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 
 const AddToCart = ({ data }: { data: Product }) => {
   const dispatch = useAppDispatch();
-  const { itemData } = useAppSelector(({ cartSlice }:{cartSlice:CartInitialType}) => cartSlice);
+  const { itemData } = useAppSelector(
+    ({ cartSlice }: { cartSlice: CartInitialType }) => cartSlice
+  );
   const currentData = itemData?.find((item: Product) => item.id === data?.id);
-  const { wishListData } = useAppSelector(({ wishListSlice }:{wishListSlice:WishListInitialType}) => wishListSlice);
+  const { wishListData } = useAppSelector(
+    ({ wishListSlice }: { wishListSlice: WishListInitialType }) => wishListSlice
+  );
   const isExistInWishList = wishListData?.some(
     (item: Product) => item.id === data?.id
   );
@@ -37,7 +46,9 @@ const AddToCart = ({ data }: { data: Product }) => {
     }
   };
 
-  const doesExistInCart = itemData?.some((item:Product) => item.id === data?.id);
+  const doesExistInCart = itemData?.some(
+    (item: Product) => item.id === data?.id
+  );
 
   const compareBtn = () => {
     dispatch(addToCompare(data));
@@ -62,9 +73,9 @@ const AddToCart = ({ data }: { data: Product }) => {
   };
 
   return (
-    <div className="flex flex-row gap-5 flex-wrap my-5">
-      <div className="flex flex-row gap-2">
-        <button onClick={handleDecrement} className="btn primary-btn">
+    <div className="flex sm:flex-row flex-col gap-5  my-5">
+      <div className="flex flex-row justify-evenly gap-2 bg-slate-100 px-10 rounded-full">
+        <button onClick={handleDecrement}>
           <AiOutlineMinus />
         </button>
         <p className="flex  p-4 font-medium w-7 justify-center">
@@ -72,40 +83,45 @@ const AddToCart = ({ data }: { data: Product }) => {
             ? currentData.attributes.quantity
             : "0"}
         </p>
-        <button onClick={handleIncrement} className="btn primary-btn">
+        <button onClick={handleIncrement}>
           <AiOutlinePlus />
         </button>
       </div>
-      <button onClick={addToCartBtn} className="btn sm:btn-wide primary-btn">
-        Add To Cart
-      </button>
+      <div className="flex items-center gap-5">
+        <button
+          onClick={addToCartBtn}
+          className="text-center bg-black text-white  w-[50vw] lg:w-[30vw] py-4  rounded-full  uppercase text-xs font-bold"
+        >
+          Add To Cart
+        </button>
 
-      <button
-        onClick={addToWishlistBtn}
-        className="tooltip tooltip-top"
-        data-tip="Add to wishlist"
-      >
-        <AiOutlineHeart
-          size={50}
-          className={`p-4  shadow-md rounded-full  duration-500 ${
-            isExistInWishList
-              ? "bg-black text-white"
-              : "bg-white text-black hover:bg-black hover:text-white"
-          }`}
-        />
-      </button>
-      <button
-        onClick={compareBtn}
-        className="tooltip tooltip-top"
-        data-tip="Compare"
-      >
-        <Link href="/compare">
-          <MdOutlineCompareArrows
+        <button
+          onClick={addToWishlistBtn}
+          className="tooltip tooltip-top"
+          data-tip="Add to wishlist"
+        >
+          <AiOutlineHeart
             size={50}
-            className="p-4 bg-white shadow-md rounded-full hover:bg-black hover:text-white duration-500"
+            className={`p-4  shadow-md rounded-full  duration-500 ${
+              isExistInWishList
+                ? "bg-black text-white"
+                : "bg-white text-black hover:bg-black hover:text-white"
+            }`}
           />
-        </Link>
-      </button>
+        </button>
+        <button
+          onClick={compareBtn}
+          className="tooltip tooltip-top"
+          data-tip="Compare"
+        >
+          <Link href="/compare">
+            <MdOutlineCompareArrows
+              size={50}
+              className="p-4 bg-white shadow-md rounded-full hover:bg-black hover:text-white duration-500"
+            />
+          </Link>
+        </button>
+      </div>
     </div>
   );
 };

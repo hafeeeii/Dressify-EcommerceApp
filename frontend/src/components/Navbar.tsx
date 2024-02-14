@@ -28,12 +28,11 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      const newScrollDirection = scrollTop > 0 ? "down" : "up";
-
+      const newScrollDirection = Math.floor(scrollTop) > 0 ? "down" : "up";
       if (newScrollDirection !== scrollDirecton) {
         setScrollDirection(newScrollDirection);
       }
-      setIsScrolled(scrollTop > 0);
+      setIsScrolled(Math.floor(scrollTop) > 0);
     };
     window.addEventListener("scroll", handleScroll);
 
@@ -62,8 +61,10 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+<div className="relative ">
 
-      <div
+
+<div
         className={`z-50 w-[100vw]   bg-white py-3 flex justify-between items-center px-4 ${
           isScrolled && scrollDirecton === "down"
             ? "fixed top-0 left-0  shadow-md "
@@ -134,6 +135,9 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
+
+</div>
+    
     </nav>
   );
 };
