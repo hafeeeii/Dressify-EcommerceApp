@@ -6,17 +6,17 @@ import SubHeading from "./SubHeading";
 
 const Category = () => {
   return (
-    <div>
+    <div className="h-full w-full">
       <SubHeading
         title="Explore Dressify"
         paragraph="Upgrade your style with our curated sets. Choose confidence, embrace your unique look."
       />
 
-      <div className="flex sm:flex-row flex-col gap-1 px-2  justify-center ">
+      <div className="flex sm:flex-row flex-col gap-1 px-2  sm:justify-center items-center ">
         {heroCategory?.map((category) => (
           <div
             key={category.id}
-            className="sm:h-[39vh] h-[30vh] sm:w-1/3 wf' relative overflow-hidden "
+            className="sm:h-[39vh] h-[30vh] sm:w-[30vw] w-[90vw] relative overflow-hidden "
           >
             <Image
               src={category.img}

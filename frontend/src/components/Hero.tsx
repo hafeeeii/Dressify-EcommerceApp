@@ -24,8 +24,8 @@ const Hero = ({ heroImg }: { heroImg: Hero[] }) => {
   }, []);
 
   return (
-    <header className=" lg:h-[100vh] h-[75vh]  w-[100vw] overflow-hidden ">
-      <div className="h-full w-full relative overflow-hidden">
+    <header className=" lg:h-[100vh] h-[75vh]  w-full overflow-hidden">
+      <div className="h-full w-full relative ">
         {heroImg?.map((data: Hero, index) => (
           <div
             key={index}
@@ -73,13 +73,13 @@ const Hero = ({ heroImg }: { heroImg: Hero[] }) => {
         )}
 
         <button
-          className="absolute right-0 top-1/2 transform -translate-y-1/2 w-16 h-16 rounded-full bg-gray-200  lg:flex items-center justify-center mr-4 hover:bg-black hover:text-white duration-500 hidden"
+          className="absolute right-2 top-1/2 transform -translate-y-1/2 w-16 h-16 rounded-full bg-gray-200  lg:flex items-center justify-center mr-4 hover:bg-black hover:text-white duration-500 hidden"
           onClick={nextSlide}
         >
           <AiOutlineArrowRight />
         </button>
         <button
-          className="absolute left-0 top-1/2 transform -translate-y-1/2  w-16 h-16  rounded-full bg-gray-200  lg:flex items-center justify-center ml-4  hover:bg-black hover:text-white duration-500 hidden"
+          className="absolute left-2 top-1/2 transform -translate-y-1/2  w-16 h-16  rounded-full bg-gray-200  lg:flex items-center justify-center ml-4  hover:bg-black hover:text-white duration-500 hidden"
           onClick={prevSlide}
         >
           <AiOutlineArrowLeft />

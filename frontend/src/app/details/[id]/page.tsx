@@ -10,6 +10,7 @@ import { useFetch } from "@/lib/hooks/useFetch";
 import { Product } from "@/lib/utils/types";
 import SubHeading from "@/components/SubHeading";
 import { BsEye } from "react-icons/bs";
+import MainImage from "./components/ProductInfoActions/MainImage";
 
 const Detail = async ({
   params,
@@ -22,14 +23,14 @@ const Detail = async ({
   const data = await useFetch(`/products/${newId}?populate=*`);
   const detailData: Product = data?.data;
 
-  const productImg = detailData?.attributes?.img?.data?.attributes?.url;
+
 
   return (
-    <div className="min-h-screen  w-[100vw] px-4  lg:my-24 my-4 flex flex-col  items-center flex-wrap ">
+    <div className="min-h-screen  w-full px-2  lg:my-24 my-4 flex flex-col  items-center flex-wrap ">
       {detailData && (
         <>
           <div className="flex lg:gap-10 gap-5 lg:flex-row flex-col items-center lg:items-start lg:justify-center ">
-            <ImgMagnifier src={productImg} width={400} height={600} />
+           <MainImage productData={detailData}/>
 
             {/* Description */}
 

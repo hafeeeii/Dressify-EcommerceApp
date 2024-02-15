@@ -42,10 +42,10 @@ const Navbar = () => {
   }, [scrollDirecton]);
 
   return (
-    <nav className="w-[100vw] bg-white  overflow-x-hidden shadow-md ">
-      <div>
+    <nav className="w-full bg-white  overflow-x-hidden shadow-md ">
+      <div className="w-full">
         <Alert />
-        <div className="hidden lg:flex justify-between items-center py-3 px-10 font-medium text-xs border ">
+        <div className="hidden lg:flex  justify-between items-center  p-3  font-medium text-xs border ">
           <div className="flex gap-3">
             <p>+222-1800-2628</p>
             <p>blueskytechcompany@gmail.com</p>
@@ -65,7 +65,7 @@ const Navbar = () => {
 
 
 <div
-        className={`z-50 w-[100vw]   bg-white py-3 flex justify-between items-center px-4 ${
+        className={`z-50 w-full   bg-white py-3 flex justify-between items-center px-2 ${
           isScrolled && scrollDirecton === "down"
             ? "fixed top-0 left-0  shadow-md "
             : ""

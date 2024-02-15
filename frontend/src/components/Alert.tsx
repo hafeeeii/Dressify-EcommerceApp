@@ -27,7 +27,7 @@ const Alert = () => {
   return (
     <div
       role="alert"
-      className=" w-[100vw]  flex-row h-9 bg-red-600 text-white text-xs font-serif justify-center items-center tracking-widest gap-2 hidden sm:flex"
+      className=" w-full  flex-row h-9 bg-red-600 text-white text-xs font-serif justify-center items-center tracking-widest gap-2 hidden sm:flex"
     >
       <BsClock size={14} />
       <span className="flex flex-row">

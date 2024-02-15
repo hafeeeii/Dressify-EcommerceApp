@@ -14,10 +14,10 @@ const Card = ({ data }: { data: Product }) => {
   return (
     <div className="flex  ">
       {data && (
-        <div className="  lg:w-[20rem] sm:w-[15rem] min-h-[25rem]  lg:min-h-[30rem]  w-[10rem] ">
+        <div className="  lg:w-[20rem] sm:w-[15rem] min-h-[22rem]  lg:min-h-[30rem] h-[15rem] w-[9rem] ">
           <div className="relative group  ">
             <Link href={`/details/${data.id}`}>
-              <figure className="group relative  sm:w-[15rem] lg:min-h-[28rem] lg:w-[20rem] sm:min-h-[20rem] h-[17rem] w-[10rem] overflow-hidden">
+              <figure className="group relative  sm:w-[15rem] lg:min-h-[28rem] lg:w-[20rem] sm:min-h-[20rem] h-[15rem] w-[9rem] overflow-hidden">
                 <Image
                   alt="product image"
                   src={productImg && productImg}

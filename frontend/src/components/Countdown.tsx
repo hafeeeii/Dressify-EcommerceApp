@@ -27,7 +27,7 @@ const Countdown = () => {
   ];
 
   return (
-    <div className="relative lg:h-[100vh] w-[100vw] h-[37vh] sm:h-[69vh] my-12{searchedData?.map((product: Product) => (
+    <div className="relative lg:h-[100vh] w-full h-[37vh] sm:h-[69vh] my-12{searchedData?.map((product: Product) => (
   <Card data={product} />
 ))}">
       <Image src="/fashion2-countdown_1.jpg" alt="img" fill objectFit="cover" />

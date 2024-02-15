@@ -9,7 +9,7 @@ const FeaturedProduct = async ({ type }: { type: string }) => {
   );
 
   return (
-    <div className="relative">
+    <div className="relative px-2">
       <div className="flex justify-center items-center flex-wrap lg:gap-10 gap-3">
         {products?.data?.slice(0, 4).map((product: Product) => (
           <div key={product?.id}>

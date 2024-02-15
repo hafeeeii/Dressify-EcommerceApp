@@ -59,6 +59,9 @@ export type Product = {
     sub_categories: {
       data: Sub_category[];
     };
+    images:{
+      data: Img[];
+    }
     quantity: number;
     img: Img;
     img2: Img;

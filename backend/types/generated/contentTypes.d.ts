@@ -860,6 +860,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
     availability: Attribute.Boolean;
     isNew: Attribute.Boolean;
     color: Attribute.String;
+    images: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
