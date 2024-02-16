@@ -42,7 +42,7 @@ const Navbar = () => {
   }, [scrollDirecton]);
 
   return (
-    <nav className="w-full bg-white  overflow-x-hidden shadow-md ">
+    <nav className="w-full bg-white shadow-md ">
       <div className="w-full">
         <Alert />
         <div className="hidden lg:flex  justify-between items-center  p-3  font-medium text-xs border ">

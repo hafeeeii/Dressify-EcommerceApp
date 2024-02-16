@@ -1,22 +1,38 @@
-import { Product } from '@/lib/utils/types'
-import Image from 'next/image';
-import React from 'react'
+"use client";
+import { Product } from "@/lib/utils/types";
+import Image from "next/image";
+import React, { useState } from "react";
+import ImgMagnifier from "./ImgMagnifier";
 
-const MainImage = ({productData}:{productData:Product}) => {
-    const productImages = productData?.attributes?.img?.data?.attributes?.url;
-    console.log(productData,'this is product data form imaage')
+const MainImage = ({ productData }: { productData: Product }) => {
+  const productImages = productData?.attributes?.images?.data;
+  const images = productData?.attributes?.images?.data;
+  const [mainImage, setMainImage] = useState(productImages[0]?.attributes?.url);
   return (
-
-    <div className='w-[40vw] h-[30vh] bg-red-200'>
-{productData?.attributes?.images?.data?.map((image)=>(
-    <div>
-        <Image src={image?.data?.attributes?.url} alt='product image' width={333} height={333} />
+    <div className="flex flex-col gap-2 items-center lg:flex-row ">
+      <div>
+        <ImgMagnifier src={mainImage} width={400} height={600} />
+      </div>
+      <div className="flex gap-1 lg:flex-col ">
+        {images?.map((image) => (
+          <div
+            className={`min-w-[50px] rounded-[10px] overflow-hidden ${
+              mainImage === image?.attributes?.url ? "border border-black" : ""
+            }`}
+            key={image?.id}
+            onClick={() => setMainImage(image?.attributes?.url)}
+          >
+            <Image
+              src={image?.attributes?.formats?.small?.url}
+              alt="product image"
+              width={83}
+              height={75}
+            />
+          </div>
+        ))}
+      </div>
     </div>
-))}
+  );
+};
 
-
-    </div>
-  )
-}
-
-export default MainImage
+export default MainImage;

@@ -16,12 +16,12 @@ const Testimonials = () => {
             key={data.id}
             className=" flex flex-col items-center gap-4 border p-8 w-[28rem]  rounded-[5px]"
           >
-            <div className="w-16 h-16 rounded-full overflow-hidden relative">
+            <div className="w-16 h-16 rounded-full relative  border border-slate-300">
               <Image
                 src={data.img}
                 alt="profile pic"
                 fill
-                className="object-cover"
+                className="object-cover p-1  rounded-full"
               />
             </div>
             <p className="text-sm tracking-wide leading-loose text-center text-slate-700 px-3">

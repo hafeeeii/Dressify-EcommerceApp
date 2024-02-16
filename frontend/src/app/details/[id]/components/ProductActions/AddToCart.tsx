@@ -73,7 +73,7 @@ const AddToCart = ({ data }: { data: Product }) => {
   };
 
   return (
-    <div className="flex sm:flex-row flex-col gap-5  my-5">
+    <div className="flex sm:flex-row flex-col gap-5 flex-wrap  my-5">
       <div className="flex flex-row justify-evenly gap-2 bg-slate-100 px-10 rounded-full">
         <button onClick={handleDecrement}>
           <AiOutlineMinus />

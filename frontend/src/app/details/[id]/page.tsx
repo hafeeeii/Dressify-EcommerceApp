@@ -5,7 +5,6 @@ import AddToCart from "./components/ProductActions/AddToCart";
 import BuyBtn from "./components/ProductActions/BuyBtn";
 import TabbedPanel from "./components/ProductActions/TabbedPanel";
 import FeaturedProduct from "@/components/FeaturedProduct";
-import ImgMagnifier from "./components/ProductInfoActions/ImgMagnifier";
 import { useFetch } from "@/lib/hooks/useFetch";
 import { Product } from "@/lib/utils/types";
 import SubHeading from "@/components/SubHeading";
@@ -23,18 +22,16 @@ const Detail = async ({
   const data = await useFetch(`/products/${newId}?populate=*`);
   const detailData: Product = data?.data;
 
-
-
   return (
-    <div className="min-h-screen  w-full px-2  lg:my-24 my-4 flex flex-col  items-center flex-wrap ">
+    <div className="min-h-screen  w-full md:px-10 px-4 mt-6 lg:my-24 my-4 flex flex-col  items-center flex-wrap ">
       {detailData && (
         <>
-          <div className="flex lg:gap-10 gap-5 lg:flex-row flex-col items-center lg:items-start lg:justify-center ">
-           <MainImage productData={detailData}/>
+          <div className="flex lg:gap-10 gap-5 lg:flex-row flex-col items-center lg:items-start lg:justify-center  ">
+            <MainImage productData={detailData} />
 
             {/* Description */}
 
-            <div className="flex flex-col gap-5 lg:w-[50vw] sm:[80vw] ">
+            <div className="flex flex-col gap-5 lg:w-[40vw] sm:[80vw] ">
               <h2 className="text-3xl   capitalize  tracking-wide">
                 {detailData?.attributes?.title}
               </h2>
@@ -75,7 +72,7 @@ const Detail = async ({
 
               <h3 className="text-3xl font-bold">{`$${detailData?.attributes?.price}`}</h3>
 
-              <p className="text-slate-500">
+              <p className="text-slate-500 pr-3">
                 {detailData?.attributes?.description
                   ? detailData?.attributes?.description
                   : "   Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasmollitia quidem quo. Suscipit rerum aliquam distinctio, placequaerat nam assumenda numquam, officia atque odit debitis a eumsunt fugiat aliquid. lorem1000"}
@@ -148,16 +145,17 @@ const Detail = async ({
           </div>
 
           {/* Detail description */}
-
-          <div className="md:px-10 px-4 mt-6">
-            <TabbedPanel />
-          </div>
-          <div>
-            <SubHeading
-              title="Trending This Week"
-              paragraph="Here’s some of our most popular products people are in love with."
-            />
-            <FeaturedProduct type="trending" />
+          <div className="lg:px-10">
+            <div className="mt-7 ">
+              <TabbedPanel />
+            </div>
+            <div>
+              <SubHeading
+                title="Trending This Week"
+                paragraph="Here’s some of our most popular products people are in love with."
+              />
+              <FeaturedProduct type="trending" />
+            </div>
           </div>
         </>
       )}

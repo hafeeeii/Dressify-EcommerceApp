@@ -59,9 +59,36 @@ export type Product = {
     sub_categories: {
       data: Sub_category[];
     };
-    images:{
-      data: Img[];
-    }
+    images: {
+      data: [
+        {
+          id: number;
+          attributes: {
+            name: string;
+            alternativeText: null;
+            caption: null;
+            width: number;
+            height: number;
+            formats: {
+              large: ImgFormat;
+              small: ImgFormat;
+              medium: ImgFormat;
+              thumbnail: ImgFormat;
+            };
+            hash: string;
+            ext: string;
+            mime: string;
+            size: number;
+            url: string;
+            previewUrl: null;
+            provider: string;
+            provider_metadata: string;
+            createdAt: string;
+            updatedAt: string;
+          };
+        }
+      ];
+    };
     quantity: number;
     img: Img;
     img2: Img;

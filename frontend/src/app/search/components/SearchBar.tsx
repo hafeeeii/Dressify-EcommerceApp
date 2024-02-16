@@ -22,11 +22,9 @@ const SearchBar = () => {
       params.delete("query");
     }
     replace(`${pathname}?${params.toString()}`);
-    console.log(`${pathname}?${params.toString()}`, "so this is the url");
   };
 
   let searchTerm = searchParams.get("query")?.toString();
-  console.log(searchTerm, "this si");
 
   const handleSearchBtn = () => {
     setIsClicked(true);
@@ -47,7 +45,6 @@ const SearchBar = () => {
       });
   };
 
-  console.log(searchedData, "ths searched one");
   return (
     <div className="flex flex-col items-center">
       <div className=" relative w-[80vw]   text-gray-600 ">
