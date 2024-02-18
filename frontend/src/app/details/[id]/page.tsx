@@ -21,13 +21,14 @@ const Detail = async ({
   const newId: number = parseInt(params?.id);
   const data = await useFetch(`/products/${newId}?populate=*`);
   const detailData: Product = data?.data;
+  console.log(detailData,'THIS IS FETCHING AGAIN OK')
 
   return (
     <div className="min-h-screen  w-full md:px-10 px-4 mt-6 lg:my-24 my-4 flex flex-col  items-center flex-wrap ">
       {detailData && (
         <>
           <div className="flex lg:gap-10 gap-5 lg:flex-row flex-col items-center lg:items-start lg:justify-center  ">
-            <MainImage productData={detailData} />
+            <MainImage imagesData={detailData?.attributes?.images?.data} />
 
             {/* Description */}
 

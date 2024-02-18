@@ -44,6 +44,33 @@ type Img = {
   };
 };
 
+export type Images = {
+  id: number;
+  attributes: {
+    name: string;
+    alternativeText: null;
+    caption: null;
+    width: number;
+    height: number;
+    formats: {
+      large: ImgFormat;
+      small: ImgFormat;
+      medium: ImgFormat;
+      thumbnail: ImgFormat;
+    };
+    hash: string;
+    ext: string;
+    mime: string;
+    size: number;
+    url: string;
+    previewUrl: null;
+    provider: string;
+    provider_metadata: string;
+    createdAt: string;
+    updatedAt: string;
+  };
+};
+
 export type Product = {
   id: number;
   attributes: {
@@ -60,34 +87,7 @@ export type Product = {
       data: Sub_category[];
     };
     images: {
-      data: [
-        {
-          id: number;
-          attributes: {
-            name: string;
-            alternativeText: null;
-            caption: null;
-            width: number;
-            height: number;
-            formats: {
-              large: ImgFormat;
-              small: ImgFormat;
-              medium: ImgFormat;
-              thumbnail: ImgFormat;
-            };
-            hash: string;
-            ext: string;
-            mime: string;
-            size: number;
-            url: string;
-            previewUrl: null;
-            provider: string;
-            provider_metadata: string;
-            createdAt: string;
-            updatedAt: string;
-          };
-        }
-      ];
+      data: Images[];
     };
     quantity: number;
     img: Img;

@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import { StoreProvider } from "@/store/StoreProvider";
 import { Toaster } from "react-hot-toast";
 import SideMenu from "@/components/SideMenu";
+import TopBar from "@/components/TopBar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -21,15 +22,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} bg-white text-black relative min-h-screen w-[100vw] overflow-x-hidden  sm:pr-[1rem]`}
+        className={`${inter.className} bg-white text-black relative min-h-screen w-[100vw] overflow-x-hidden  sm:pr-[1rem] `}
       >
         <StoreProvider>
-          <Navbar />
+          <TopBar />
+          <div className="sticky top-0 z-50">
+            <Navbar />
+          </div>
 
           <div>{children}</div>
           <Toaster />
           <Footer />
-          <div className=" top-[70%] right-1  fixed z-10">
+          <div className=" bottom-[20%] right-1  fixed z-10">
             <SideMenu />
           </div>
         </StoreProvider>

@@ -9,7 +9,7 @@ import { useFetch } from "@/lib/hooks/useFetch";
 export default async function Home() {
   const heroImg = await useFetch("/heroes?populate=*");
   return (
-    <main className=" min-h-screen w-full">
+    <main className=" min-h-screen w-full ">
       <Hero heroImg={heroImg?.data} />
       <Category />
 

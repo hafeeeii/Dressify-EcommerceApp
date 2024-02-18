@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const Testimonials = () => {
   return (
-    <div className="flex flex-col items-center ">
+    <div className="flex flex-col items-center w-full text-center">
       <SubHeading
         title="Customer Say!"
         paragraph="Customers love our products and we always strive to please them all."
@@ -14,7 +14,7 @@ const Testimonials = () => {
         {testimonialsData?.map((data) => (
           <div
             key={data.id}
-            className=" flex flex-col items-center gap-4 border p-8 w-[28rem]  rounded-[5px]"
+            className=" flex flex-col items-center gap-4 border p-8 md:w-[30%] w:[90%]  rounded-[5px]"
           >
             <div className="w-16 h-16 rounded-full relative  border border-slate-300">
               <Image
@@ -39,7 +39,7 @@ const Testimonials = () => {
               <input type="radio" name="rating-1" className="mask mask-star" />
               <input type="radio" name="rating-1" className="mask mask-star" />
             </div>
-            <h3 className="text-slate-800">
+            <h3 className="text-slate-800 ">
               {data.name}-{data.isVerified ? "verified buyer" : ""}
             </h3>
           </div>
