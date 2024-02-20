@@ -1,3 +1,4 @@
+
 import axios from "axios";
  const BASE_URL = process.env.BASE_URL
 export async function useFetch(url:string) {
@@ -9,7 +10,8 @@ export async function useFetch(url:string) {
       });
       return res.data;
     } catch (error) {
-      console.log(error,);
+      console.log(error,)
+    
     }
   }
   

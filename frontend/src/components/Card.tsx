@@ -14,10 +14,10 @@ const Card = ({ data }: { data: Product }) => {
   return (
     <div className="flex  ">
       {data && (
-        <div className="  lg:w-[20rem] sm:w-[15rem] min-h-[22rem]  lg:min-h-[30rem] h-[15rem] w-[9rem] ">
-          <div className="relative group  ">
+        <div>
+          <div className="relative group lg:w-[322px] lg:h-[455px] md:w-[222px] md:h-[300px] w-[150px] h-[230px]">
             <Link href={`/details/${data.id}`}>
-              <figure className="group relative  sm:w-[15rem] lg:min-h-[28rem] lg:w-[20rem] sm:min-h-[20rem] h-[15rem] w-[9rem] overflow-hidden">
+              <figure className="group relative w-full h-full overflow-hidden">
                 <Image
                   alt="product image"
                   src={productImg && productImg}
@@ -54,7 +54,7 @@ const Card = ({ data }: { data: Product }) => {
               </button>
             )}
           </div>
-          <div className="lg:w-[20rem] w-[10rem]">
+          <div className="lg:w-[322px] md:w-[222px]  w-[150px]">
             <h2 className="lg:text-md text-sm my-1 lg:font-medium capitalize">
               {data?.attributes?.title}
             </h2>
