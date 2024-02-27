@@ -15,7 +15,7 @@ const Category = () => {
       />
       <div className="flex sm:flex-row flex-col gap-1 px-2  sm:justify-center items-center ">
         {heroCategory?.map((category, index) => (
-          <motion.div className="sm:h-[39vh] h-[30vh] sm:w-[30vw] w-[90vw] relative overflow-hidden ">
+          <motion.div className="sm:h-[39vh] h-[30vh] sm:w-[30vw] w-[90vw] relative overflow-hidden" key={index}>
             <Image
               src={category.img}
               alt="category img"

@@ -53,7 +53,7 @@ const Card = ({ data }: { data: Product }) => {
               </button>
             )}
           </div>
-          <div className="  w-[200px]">
+          <div className=" w-full">
             <Link href={`/details/${data.id}`}>
               <h2 className="lg:text-md text-sm my-1 lg:font-medium capitalize cursor-pointer">
                 {data?.attributes?.title}
