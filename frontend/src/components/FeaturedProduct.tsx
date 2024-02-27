@@ -8,9 +8,10 @@ const FeaturedProduct = async ({ type }: { type: string }) => {
     `/products?populate=*&[filters][type][$eq]=${type}`
   );
 
+
   return (
     <div className="relative px-2">
-      <div className="flex justify-center items-center flex-wrap lg:gap-10 gap-3">
+      <div className="flex justify-center  flex-wrap lg:gap-10 gap-3">
         {products?.data?.slice(0, 4).map((product: Product) => (
           <div key={product?.id}>
             <Card data={product} />

@@ -1,12 +1,19 @@
 import Category from "@/components/Category";
 import Countdown from "@/components/Countdown";
-import FeaturedProduct from "@/components/FeaturedProduct";
+
 import Hero from "@/components/Hero";
 import SubHeading from "@/components/SubHeading";
 import Testimonials from "@/components/Testimonials";
 import { useFetch } from "@/lib/hooks/useFetch";
+import dynamic from "next/dynamic";
+
+
+
 
 export default async function Home() {
+  const FeaturedProduct = dynamic(() => import("@/components/FeaturedProduct"), {
+    loading: () => <p>Loading...</p>,
+  });
   const heroImg = await useFetch("/heroes?populate=*");
   return (
     <main className=" min-h-screen w-full ">

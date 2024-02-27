@@ -14,31 +14,30 @@ const Card = ({ data }: { data: Product }) => {
   return (
     <div className="flex  ">
       {data && (
-        <div>
-          <div className="relative group lg:w-[322px] lg:h-[455px] md:w-[222px] md:h-[300px] w-[150px] h-[230px]">
-            <Link href={`/details/${data.id}`}>
-              <figure className="group relative w-full h-full overflow-hidden">
-                <Image
-                  alt="product image"
-                  src={productImg && productImg}
-                  fill
-                  quality="99"
-                  className=" object-cover object-top group-hover:opacity-0  duration-500"
-                />
-                <Image
-                  alt="product image"
-                  src={productImg2 && productImg2}
-                  fill
-                  quality="99"
-                  className=" object-cover object-top opacity-0 group-hover:opacity-100  duration-500 group-hover:scale-110 "
-                />
-                <div className="lg:opacity-0 group-hover:opacity-100 duration-500">
-                  <CardOptions data={data} />
-                </div>
-              </figure>
-            </Link>
+        <div className="w-[160px] h-[300px] md:w-[210px] md:h-[430px] lg:w-[260px] lg:h-[480px]">
+          <div className="group h-[80%] w-full relative overflow-hidden ">
+            <figure className=" h-full w-full">
+              <Image
+                alt="product image"
+                src={productImg && productImg}
+                fill
+                quality="99"
+                className=" object-cover  group-hover:opacity-0  duration-500"
+              />
+              <Image
+                alt="product image"
+                src={productImg2 && productImg2}
+                fill
+                quality="99"
+                className=" object-cover  opacity-0 group-hover:opacity-100  duration-500 group-hover:scale-110 "
+              />
+            </figure>
 
-            <button className="absolute bottom-3 left-1/2 transform -translate-x-1/2  lg:p-4 lg:px-10 lg:bg-white shadow-md rounded-full text-xs lg:hover:bg-black lg:hover:text-white duration-500 lg:opacity-0 group-hover:opacity-100 bg-white btn-sm lg:btn-md">
+            <div className="lg:opacity-0 group-hover:opacity-100 duration-500 absolute right-2 top-6">
+              <CardOptions data={data} />
+            </div>
+
+            <button className="absolute bottom-3 left-1/2 transform -translate-x-1/2  lg:p-4 lg:px-10 lg:bg-white shadow-md rounded-full text-xs lg:hover:bg-black lg:hover:text-white duration-500 lg:opacity-0 group-hover:opacity-100 bg-white btn-sm lg:btn-md flex items-center">
               Buy Now
             </button>
 
@@ -54,10 +53,12 @@ const Card = ({ data }: { data: Product }) => {
               </button>
             )}
           </div>
-          <div className="lg:w-[322px] md:w-[222px]  w-[150px]">
-            <h2 className="lg:text-md text-sm my-1 lg:font-medium capitalize">
-              {data?.attributes?.title}
-            </h2>
+          <div className="  w-[200px]">
+            <Link href={`/details/${data.id}`}>
+              <h2 className="lg:text-md text-sm my-1 lg:font-medium capitalize cursor-pointer">
+                {data?.attributes?.title}
+              </h2>
+            </Link>
             <h4 className="text-md">
               <span className="text-red-600 ">
                 ${data?.attributes?.price}.00

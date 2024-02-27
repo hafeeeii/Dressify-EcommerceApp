@@ -51,7 +51,7 @@ const CardOptions = ({ data }: { data: Product }) => {
   };
   const size = window.innerWidth < 768 ? 30 : 50;
   return (
-    <div className="absolute right-2 top-6  flex flex-col gap-3 ">
+    <div className="  flex flex-col gap-3 ">
       <button
         onClick={addToWishlistBtn}
         className="tooltip tooltip-left"
@@ -66,18 +66,18 @@ const CardOptions = ({ data }: { data: Product }) => {
           }`}
         />
       </button>
-      <Link href="/compare">
-        <button
-          onClick={compareBtn}
-          className="tooltip tooltip-left"
-          data-tip="Compare"
-        >
-          <MdOutlineCompareArrows
-            size={size}
-            className="p-2 sm:p-4 bg-white shadow-md rounded-full hover:bg-black hover:text-white duration-500"
-          />
-        </button>
-      </Link>
+      {/* <Link href="/compare"> */}
+      <button
+        onClick={compareBtn}
+        className="tooltip tooltip-left"
+        data-tip="Compare"
+      >
+        <MdOutlineCompareArrows
+          size={size}
+          className="p-2 sm:p-4 bg-white shadow-md rounded-full hover:bg-black hover:text-white duration-500"
+        />
+      </button>
+      {/* </Link> */}
 
       <button
         onClick={addToCartBtn}

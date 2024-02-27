@@ -25,11 +25,11 @@ const Navbar = () => {
   return (
     <nav className="w-full bg-white shadow-md ">
       <div className="relative ">
-        <div className="z-50 flex w-full py-3 items-center px-3 justify-between ">
-          <div className="drawer  lg:hidden">
+        <div className="z-50 flex w-full py-3 items-center px-3 justify-between">
+          <div className="drawer  lg:hidden w-fit">
             <input id="my-drawer" type="checkbox" className="drawer-toggle" />
 
-            <label htmlFor="my-drawer" className=" drawer-button ">
+            <label htmlFor="my-drawer" className=" drawer-button  ">
               <BsMenuButtonFill size={24} />
             </label>
             <div className="drawer-side h-[100vh] z-[99999]  lg:hidden ">

@@ -25,7 +25,7 @@ const Detail = async ({
   const detailData: Product = data?.data;
 
   return (
-    <div className="min-h-screen  w-full md:px-10 px-4 mt-6 lg:my-24 my-4 flex flex-col  items-center flex-wrap ">
+    <div className="min-h-screen  w-full md:px-10 px-4 mt-6  my-4 flex flex-col  items-center flex-wrap ">
       <>
         <div className="flex lg:gap-10 gap-5 lg:flex-row flex-col items-center lg:items-start lg:justify-center  ">
           <MainImage imagesData={detailData?.attributes?.images?.data} />
