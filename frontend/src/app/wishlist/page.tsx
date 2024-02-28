@@ -4,7 +4,7 @@ import React from "react";
 
 const page = async () => {
   return (
-    <div className=" p-2 min-h-screen  flex flex-col items-center mt-10">
+    <div className=" p-2 min-h-screen w-full flex flex-col items-center mt-10">
       <h2 className="font-medium text-4xl ">WishList</h2>
       <div className="breadcrumbs text-sm mb-10">
         <ul>
@@ -16,7 +16,7 @@ const page = async () => {
           </li>
         </ul>
       </div>
-      <div className="flex justify-center gap-3 flex-wrap">
+      <div className="flex justify-center gap-3 flex-wrap ">
         <WishListCard />
       </div>
     </div>

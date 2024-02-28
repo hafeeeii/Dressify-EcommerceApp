@@ -8,7 +8,6 @@ const FeaturedProduct = async ({ type }: { type: string }) => {
     `/products?populate=*&[filters][type][$eq]=${type}`
   );
 
-
   return (
     <div className="relative px-2 my-7">
       <div className="flex justify-center  flex-wrap lg:gap-10 gap-3">
