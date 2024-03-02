@@ -11,7 +11,7 @@ import React from "react";
 import { FaArrowUp } from "react-icons/fa";
 
 const SideMenu = () => {
-  const { user, isAuthenticated} = useKindeBrowserClient();
+  const { user, isAuthenticated } = useKindeBrowserClient();
   const handleGoToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -19,7 +19,7 @@ const SideMenu = () => {
   return (
     <aside>
       {!isAuthenticated ? (
-        <RegisterLink  postLoginRedirectURL="/">
+        <RegisterLink postLoginRedirectURL="/">
           <button className="btn btn-ghost  hover:text-red-600  ">
             Sign up
           </button>
